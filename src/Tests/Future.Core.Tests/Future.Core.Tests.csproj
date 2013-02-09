@@ -66,6 +66,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="OrmLitePersistenceTestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Directory\CountryRegionPersistenceTests.cs" />
   </ItemGroup>
@@ -74,14 +75,16 @@
       <Project>{8fa85d84-302b-4475-b7e8-bd901f606ca0}</Project>
       <Name>Future.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Future.Tests\Future.Tests.csproj">
+      <Project>{44DAAB4C-953E-4255-BF01-71FB422D858B}</Project>
+      <Name>Future.Tests</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

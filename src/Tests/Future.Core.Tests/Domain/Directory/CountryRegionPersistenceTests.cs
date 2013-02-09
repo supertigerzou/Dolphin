@@ -1,25 +1,17 @@
 ﻿using Future.Core.Domain.Directory;
 using NUnit.Framework;
-using ServiceStack.Common.Utils;
 using ServiceStack.OrmLite;
 using System;
 
 namespace Future.Core.Tests.Domain.Directory
 {
     [TestFixture]
-    public class CountryRegionPersistenceTests
+    public class CountryRegionPersistenceTests : OrmLitePersistenceTestBase
     {
-        public static string SqlServerDb = "~/App_Data/Database.mdf".MapAbsolutePath();
-
-        [TestFixtureSetUp]
-        public void TestFixtureSetUp()
-        {
-        }
-
         [Test]
         public void Can_save_and_load_country_region()
         {
-            var factory = new OrmLiteConnectionFactory(SqlServerDb, SqlServerDialect.Provider);
+            var factory = new OrmLiteConnectionFactory(ConnectionString, SqlServerDialect.Provider);
 
             using (var db = factory.OpenDbConnection())
             {

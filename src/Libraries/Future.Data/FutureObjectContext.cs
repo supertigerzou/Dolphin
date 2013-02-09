@@ -5,6 +5,11 @@ namespace Future.Data
 {
     public class FutureObjectContext : DbContext, IDbContext
     {
+        public FutureObjectContext(string connectionString) : base(connectionString)
+        {
+            
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CountryRegionMap());
