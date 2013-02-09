@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Core.Tests", "Tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Core", "Libraries\Future.Core\Future.Core.csproj", "{8FA85D84-302B-4475-B7E8-BD901F606CA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Data", "Libraries\Future.Data\Future.Data.csproj", "{9FC676EB-B1A2-4911-BEF2-F740CAA11E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Data.Tests", "Tests\Future.Data.Tests\Future.Data.Tests.csproj", "{16364E31-1FD1-4CE0-9ACD-34616D0CB95A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,22 @@ Global
 		{8FA85D84-302B-4475-B7E8-BD901F606CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA85D84-302B-4475-B7E8-BD901F606CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA85D84-302B-4475-B7E8-BD901F606CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC676EB-B1A2-4911-BEF2-F740CAA11E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC676EB-B1A2-4911-BEF2-F740CAA11E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC676EB-B1A2-4911-BEF2-F740CAA11E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC676EB-B1A2-4911-BEF2-F740CAA11E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16364E31-1FD1-4CE0-9ACD-34616D0CB95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16364E31-1FD1-4CE0-9ACD-34616D0CB95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16364E31-1FD1-4CE0-9ACD-34616D0CB95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16364E31-1FD1-4CE0-9ACD-34616D0CB95A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8FA85D84-302B-4475-B7E8-BD901F606CA0} = {96FBC1CC-CA92-43C7-89B5-E729AA183F92}
+		{9FC676EB-B1A2-4911-BEF2-F740CAA11E81} = {96FBC1CC-CA92-43C7-89B5-E729AA183F92}
 		{A9DBC77A-3C03-4D41-922A-E8D8CAEFCF35} = {19CA01E9-B1C2-4CA6-BEC6-D23669F6ADFA}
+		{16364E31-1FD1-4CE0-9ACD-34616D0CB95A} = {19CA01E9-B1C2-4CA6-BEC6-D23669F6ADFA}
 	EndGlobalSection
 EndGlobal
