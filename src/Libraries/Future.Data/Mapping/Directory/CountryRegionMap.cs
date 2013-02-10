@@ -7,7 +7,7 @@ namespace Future.Data.Mapping.Directory
     {
         public CountryRegionMap()
         {
-            this.ToTable("CountryRegion", "Person");
+            this.ToTable("CountryRegion"); //, "Person");
             this.HasKey(cr => cr.Code);
             this.Property(cr => cr.Name).IsRequired().HasMaxLength(50);
             this.Property(cr => cr.ModifiedDate).IsRequired();
