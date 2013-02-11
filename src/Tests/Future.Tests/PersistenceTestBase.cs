@@ -10,7 +10,7 @@ namespace Future.Tests
         protected virtual string ConnectionString { get; set; }
 
         [TestFixtureSetUp]
-        public void TestFixtureSetUp()
+        public virtual void TestFixtureSetUp()
         {
             LogManager.LogFactory = new ConsoleLogFactory();
 

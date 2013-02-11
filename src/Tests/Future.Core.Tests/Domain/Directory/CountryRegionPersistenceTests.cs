@@ -1,4 +1,5 @@
-﻿using Future.Core.Domain.Directory;
+﻿using Future.Core.Domain.Person;
+using Future.Core.Domain.Sales;
 using NUnit.Framework;
 using ServiceStack.OrmLite;
 using System;
@@ -15,7 +16,8 @@ namespace Future.Core.Tests.Domain.Directory
 
             using (var db = factory.OpenDbConnection())
             {
-                db.DropAndCreateTable(typeof(CountryRegion));
+                db.DropTables(typeof(Territory), typeof(CountryRegion));
+                db.CreateTables(false, typeof(CountryRegion), typeof(Territory));
 
                 db.Insert(new CountryRegion { Code = "AD", Name = "Andorra", ModifiedDate = DateTime.Now });
 
@@ -38,6 +40,25 @@ namespace Future.Core.Tests.Domain.Directory
                 }
 
                 Assert.That(db.Select<CountryRegion>(), Has.Count.EqualTo(3));
+
+                db.Insert(new CountryRegion { Code = "US", Name = "United States", ModifiedDate = DateTime.Now });
+                db.Insert(new Territory
+                              {
+                                  CountryRegionCode = "US",
+                                  Name = "Northwest"
+                              });
+                db.Insert(new Territory
+                              {
+                                  CountryRegionCode = "US",
+                                  Name = "Northeast"
+                              });
+
+                var usRegion = db.Select<CountryRegion>(cr => cr.Code == "US")[0];
+                var territories = db.Select<Territory>(t => t.CountryRegionCode == usRegion.Code);
+                territories.ForEach(t => t.CountryRegion = usRegion);
+                usRegion.Territories = territories;
+
+                Assert.IsTrue(usRegion.Territories.Count == 2);
             }
         }
     }

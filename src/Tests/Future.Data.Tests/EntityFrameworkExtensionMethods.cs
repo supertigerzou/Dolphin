@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity.Core.EntityClient;
-using System.Data.Entity.Core.EntityClient.Internal;
 using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Reflection;
@@ -11,7 +10,7 @@ using System.Text;
 
 namespace Future.Data.Tests
 {
-    public static class CustomExtensions
+    public static class EntityFrameworkExtensions
     {
         private const string EntityAssemblyName = "EntityFramework";
 
@@ -35,35 +34,38 @@ namespace Future.Data.Tests
             var dynamicUpdateCommandType = entityAssemly.GetType(
                 "System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand");
 
-            var entityAdapter = (IEntityAdapter)((IServiceProvider)EntityProviderFactory.Instance).GetService(typeof(IEntityAdapter));
-            entityAdapter.Connection = ctx.Connection;
-            var ctorParams = new object[]
+            var entityAdapterType = entityAssemly.GetType(
+                "System.Data.Entity.Core.EntityClient.Internal.IEntityAdapter");
+
+            var entityAdapter = ((IServiceProvider)EntityProviderFactory.Instance).GetService(entityAdapterType);
+            entityAdapterType.GetProperty("Connection").SetValue(entityAdapter, ctx.Connection);
+            var ctorParams = new[]
                         {
                             ctx.ObjectStateManager,
                             entityAdapter,
                             null
                         };
 
-            object updateTranslator = Activator.CreateInstance(updateTranslatorType, ctorParams);
+            var updateTranslator = Activator.CreateInstance(updateTranslatorType, ctorParams);
 
-            MethodInfo produceCommandsMethod = updateTranslatorType
+            var produceCommandsMethod = updateTranslatorType
                 .GetMethod("ProduceCommands", BindingFlags.Instance | BindingFlags.NonPublic);
-            object updateCommands = produceCommandsMethod.Invoke(updateTranslator, null);
+            var updateCommands = produceCommandsMethod.Invoke(updateTranslator, null);
 
             var dbCommands = new List<DbCommand>();
 
-            foreach (object o in (IEnumerable)updateCommands)
+            foreach (var o in (IEnumerable)updateCommands)
             {
                 if (functionUpdateCommandType.IsInstanceOfType(o))
                 {
-                    FieldInfo mDbCommandField = functionUpdateCommandType.GetField(
+                    var mDbCommandField = functionUpdateCommandType.GetField(
                         "m_dbCommand", BindingFlags.Instance | BindingFlags.NonPublic);
 
                     if (mDbCommandField != null) dbCommands.Add((DbCommand)mDbCommandField.GetValue(o));
                 }
                 else if (dynamicUpdateCommandType.IsInstanceOfType(o))
                 {
-                    MethodInfo createCommandMethod = dynamicUpdateCommandType.GetMethod(
+                    var createCommandMethod = dynamicUpdateCommandType.GetMethod(
                         "CreateCommand", BindingFlags.Instance | BindingFlags.NonPublic);
 
                     var methodParams = new object[]
@@ -80,7 +82,7 @@ namespace Future.Data.Tests
             }
 
             var traceString = new StringBuilder();
-            foreach (DbCommand command in dbCommands)
+            foreach (var command in dbCommands)
             {
                 traceString.AppendLine("=============== BEGIN COMMAND ===============");
                 traceString.AppendLine();
