@@ -1,8 +1,8 @@
-﻿using Future.Core.Domain.Person;
+﻿using System.Data.Entity;
+using Future.Core.Domain.Person;
 using Future.Core.Domain.Sales;
 using NUnit.Framework;
 using System;
-using System.Data.Entity;
 using System.Linq;
 
 namespace Future.Data.Tests.Directory
@@ -16,7 +16,14 @@ namespace Future.Data.Tests.Directory
             var territory = new Territory
             {
                 CountryRegion = new CountryRegion { Code = "US", Name = "United States", ModifiedDate = DateTime.Now },
-                Name = "Northwest"
+                Name = "Northwest",
+                Group = "North America",
+                SalesYTD = (decimal)7887186.78,
+                SalesLastYear = (decimal)3298694.49,
+                CostYTD = (decimal)0.00,
+                CostLastYear = (decimal)0.00,
+                RowGuid = Guid.Parse("43689A10-E30B-497F-B0DE-11DE20267FF7"),
+                ModifiedDate = DateTime.Now
             };
             Save(territory);
 
@@ -25,7 +32,17 @@ namespace Future.Data.Tests.Directory
             Assert.IsTrue(countryRegion.Territories.Count == 1);
 
             countryRegion = new CountryRegion { Code = "CN", Name = "China", ModifiedDate = DateTime.Now };
-            countryRegion.Territories.Add(new Territory { Name = "Southwest" });
+            countryRegion.Territories.Add(new Territory
+            {
+                Name = "Southwest",
+                Group = "North America",
+                SalesYTD = (decimal)7887186.78,
+                SalesLastYear = (decimal)3298694.49,
+                CostYTD = (decimal)0.00,
+                CostLastYear = (decimal)0.00,
+                RowGuid = Guid.Parse("43689A10-E30B-497F-B0DE-11DE20267FF7"),
+                ModifiedDate = DateTime.Now
+            });
             Save(countryRegion);
 
             territory = Context.Set<Territory>().Find(2);
@@ -48,7 +65,18 @@ namespace Future.Data.Tests.Directory
             Context.Entry(countryRegion).Collection("Territories").Load();
             Assert.IsTrue(countryRegion.Territories.Count == 1);
 
-            territory = new Territory { Name = "Northwest", CountryRegion = Context.Set<CountryRegion>().Single(cr => cr.Code == "CN") };
+            territory = new Territory
+            {
+                Name = "Northwest",
+                Group = "North America",
+                SalesYTD = (decimal)7887186.78,
+                SalesLastYear = (decimal)3298694.49,
+                CostYTD = (decimal)0.00,
+                CostLastYear = (decimal)0.00,
+                RowGuid = Guid.Parse("43689A10-E30B-497F-B0DE-11DE20267FF7"),
+                ModifiedDate = DateTime.Now,
+                CountryRegion = Context.Set<CountryRegion>().Single(cr => cr.Code == "CN")
+            };
             Save(territory, lazyLoad: false);
 
             countryRegion = Context.Set<CountryRegion>().Find("CN");
@@ -67,6 +95,10 @@ namespace Future.Data.Tests.Directory
 
             countryRegion = Context.Set<CountryRegion>().Find("CN"); // China
             Assert.IsTrue(Context.Entry(countryRegion).Collection("Territories").Query().Cast<Territory>().Count() == 2);
+
+            DisposeAndRecreateContext();
+            countryRegion = Context.Set<CountryRegion>().ToList()[1];
+            Assert.IsTrue(countryRegion.Territories.Count == 2);
 
             // Below link is really helpful for Entity Framework lazy/eager loading.
             // Reference: http://msdn.microsoft.com/en-US/data/jj574232
