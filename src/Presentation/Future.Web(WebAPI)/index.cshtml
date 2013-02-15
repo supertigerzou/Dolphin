@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+</head>
+<body>
+    <div id="busyindicator"></div>
+
+    <section id="countries-view">
+        <section data-bind="template: {name: countryTemplate, foreach: countries}"></section>
+    </section>
+
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/underscore.js"></script>
+    <script src="~/Scripts/amplify.js"></script>
+    
+    <script src="~/Scripts/TrafficCop.js"></script>
+    <script src="~/Scripts/infuser.js"></script>
+
+    <script src="~/Scripts/knockout-2.2.1.debug.js"></script>
+    <script src="~/Scripts/koExternalTemplateEngine.js"></script>
+
+    <script data-main="Scripts/app/main" src="Scripts/require.js"></script>
+</body>
+</html>

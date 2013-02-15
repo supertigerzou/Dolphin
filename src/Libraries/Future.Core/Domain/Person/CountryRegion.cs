@@ -6,22 +6,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Future.Core.Domain.Person
 {
-    public partial class CountryRegion
+    public class CountryRegion
     {
         private ICollection<Territory> _territories;
 
         [Required]
         [Alias("CountryRegionCode")]
         [StringLength(3)]
-        public string Code { get; set; }
+        public virtual string Code { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
         [Required]
         [Default(typeof(DateTime), "getdate()")]
-        public DateTime ModifiedDate { get; set; }
+        public virtual DateTime ModifiedDate { get; set; }
 
         public virtual ICollection<Territory> Territories
         {
