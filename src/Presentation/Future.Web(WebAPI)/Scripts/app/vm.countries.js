@@ -5,7 +5,6 @@
         activate = function() {
             datacontext.countries.getData()
             .done(function (data) {
-                $('#busyindicator').text('loaded ' + data.length + ' objects.');
                 items = _.reduce(data, function (memo, dto) {
                     memo[dto.Code] = dto;
                     return memo;

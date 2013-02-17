@@ -1,6 +1,4 @@
-﻿<article>
-    <div title="Go to country details">
-        <small data-bind="text: Code" class="right"></small>
-        <small data-bind="text: Name" class="right"></small>
-    </div>
-</article>
+﻿<tr data-bind="css: {success: Territories.length > 0}">
+    <td data-bind="template: {name: 'linkbutton', data: Code}"></td>
+    <td data-bind="text: Name"></td>
+</tr>

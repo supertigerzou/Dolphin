@@ -7,14 +7,23 @@
 <body>
     <div id="busyindicator"></div>
 
-    <section id="countries-view">
-        <section data-bind="template: {name: countryTemplate, foreach: countries}"></section>
+    <section id="countries-view" class="span8">
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <caption>Country/Region Management</caption>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody data-bind="template: {name: countryTemplate, foreach: countries}"></tbody>
+        </table>
     </section>
 
     <script src="~/Scripts/jquery-1.9.1.js"></script>
     <script src="~/Scripts/underscore.js"></script>
     <script src="~/Scripts/amplify.js"></script>
-    
+
     <script src="~/Scripts/TrafficCop.js"></script>
     <script src="~/Scripts/infuser.js"></script>
 
