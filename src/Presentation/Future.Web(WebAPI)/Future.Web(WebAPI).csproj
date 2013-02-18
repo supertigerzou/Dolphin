@@ -121,8 +121,11 @@
     <None Include="Scripts\amplify-vsdoc.js" />
     <Content Include="Scripts\amplify.js" />
     <Content Include="Scripts\amplify.min.js" />
+    <Content Include="Scripts\app\binder.js" />
     <Content Include="Scripts\app\bootstrapper.js" />
+    <Content Include="Scripts\app\config.js" />
     <Content Include="Scripts\app\datacontext.js" />
+    <Content Include="Scripts\app\dataprimer.js" />
     <Content Include="Scripts\app\dataservice.country.js" />
     <Content Include="Scripts\app\main.js" />
     <Content Include="Scripts\app\utils.js" />
@@ -156,6 +159,7 @@
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Tmpl\_countries.view.tmpl.html" />
+    <Content Include="Tmpl\_linkbutton.tmpl.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

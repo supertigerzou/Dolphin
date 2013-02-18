@@ -1,19 +1,8 @@
-﻿define('vm.countries', ['underscore', 'ko', 'utils', 'datacontext'], function (_, ko, utils, datacontext) {
+﻿define('vm.countries', ['underscore', 'ko', 'datacontext'], function (_, ko, datacontext) {
     var countryTemplate = "countries.view",
-        countries = ko.observable(),
-        items = {},
+        countries = ko.observableArray(),
         activate = function() {
-            datacontext.countries.getData()
-            .done(function (data) {
-                items = _.reduce(data, function (memo, dto) {
-                    memo[dto.Code] = dto;
-                    return memo;
-                }, {});
-                var underlyingArray = utils.mapMemoToArray(items);
-
-                countries(underlyingArray);
-                console.log(countries());
-            });
+            datacontext.countries.getData({results: countries});
         };
 
     return {
