@@ -1,8 +1,10 @@
-﻿define('vm.countries', ['underscore', 'ko', 'datacontext'], function (_, ko, datacontext) {
-    var countryTemplate = "countries.view",
+﻿define(function (require) {
+    var
+        dataContext = require('/Scripts/app/datacontext.js'),
+        countryTemplate = "countries.view",
         countries = ko.observableArray(),
         activate = function() {
-            datacontext.countries.getData({results: countries});
+            dataContext.countries.getData({ results: countries });
         };
 
     return {

@@ -1,7 +1,9 @@
 ﻿/// <reference path="../jquery-1.9.1.intellisense.js" />
 
-define('datacontext', ['jquery', 'underscore', 'utils', 'dataservice.country'], function ($, _, utils, country) {
+define(function (require) {
     var
+        utils = require('/Scripts/app/utils.js'),
+        country = require('/Scripts/app/dataservice.country.js'),
         RecordSet = function () {
             var items = {},
             getData = function (options) {

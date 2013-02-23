@@ -1,4 +1,4 @@
-﻿define('config', ['infuser'], function (infuser) {
+﻿define(function () {
     var
         viewIds = {
             countries: '#countries-view'

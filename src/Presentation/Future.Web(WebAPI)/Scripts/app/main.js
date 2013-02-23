@@ -11,6 +11,9 @@ requirejs.config({
     }
 });
 
-requirejs(['bootstrapper'], function (bootstrapper) {
+define(function (require) {
+    var bootstrapper = require('/Scripts/app/bootstrapper.js'),
+        router = require('/Scripts/app/router.js');
+    
     bootstrapper.run();
 });

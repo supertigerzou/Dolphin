@@ -1,4 +1,4 @@
-﻿define('dataservice.country', ['amplify'], function (amplify) {
+﻿define(function () {
     var init = function() {
         amplify.request.define('countries', 'ajax', {
             url: '/api/CountryRegion',

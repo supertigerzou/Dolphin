@@ -1,4 +1,4 @@
-﻿define('utils', [], function () {
+﻿define(function () {
     var mapMemoToArray = function(items) {
         var underlyingArray = [];
         for (var prop in items) {

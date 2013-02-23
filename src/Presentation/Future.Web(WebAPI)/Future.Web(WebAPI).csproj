@@ -110,12 +110,51 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\durandal\amd\almond-custom.js" />
+    <Content Include="App\durandal\amd\optimizer.exe" />
+    <Content Include="App\durandal\amd\r.js" />
+    <Content Include="App\durandal\amd\require.js" />
+    <Content Include="App\durandal\amd\text.js" />
+    <Content Include="App\durandal\app.js" />
+    <Content Include="App\durandal\composition.js" />
+    <Content Include="App\durandal\events.js" />
+    <Content Include="App\durandal\http.js" />
+    <Content Include="App\durandal\messageBox.html" />
+    <Content Include="App\durandal\messageBox.js" />
+    <Content Include="App\durandal\modalDialog.js" />
+    <Content Include="App\durandal\plugins\router.js" />
+    <Content Include="App\durandal\system.js" />
+    <Content Include="App\durandal\transitions\entrance.js" />
+    <Content Include="App\durandal\viewEngine.js" />
+    <Content Include="App\durandal\viewLocator.js" />
+    <Content Include="App\durandal\viewModel.js" />
+    <Content Include="App\durandal\viewModelBinder.js" />
+    <Content Include="App\durandal\widget.js" />
+    <Content Include="App\main.js" />
+    <Content Include="App\viewmodels\administration.js" />
+    <Content Include="App\viewmodels\flickr.js" />
+    <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\welcome.js" />
+    <Content Include="App\views\administration.html" />
+    <Content Include="App\views\detail.html" />
+    <Content Include="App\views\flickr.html" />
+    <Content Include="App\views\shell.html" />
+    <Content Include="App\views\welcome.html" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\durandal.css" />
+    <Content Include="Content\font-awesome-ie7.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font\FontAwesome.otf" />
     <None Include="index.cshtml" />
     <Content Include="Global.asax" />
     <None Include="Scripts\amplify-vsdoc.js" />
@@ -128,6 +167,7 @@
     <Content Include="Scripts\app\dataprimer.js" />
     <Content Include="Scripts\app\dataservice.country.js" />
     <Content Include="Scripts\app\main.js" />
+    <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\app\utils.js" />
     <Content Include="Scripts\app\vm.countries.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -150,6 +190,8 @@
     <Content Include="Scripts\koExternalTemplateEngine_all.js" />
     <Content Include="Scripts\koExternalTemplateEngine_all.min.js" />
     <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\sammy-0.7.4.js" />
+    <Content Include="Scripts\sammy-0.7.4.min.js" />
     <Content Include="Scripts\TrafficCop-amd.js" />
     <Content Include="Scripts\TrafficCop-amd.min.gz.js" />
     <Content Include="Scripts\TrafficCop-amd.min.js" />
@@ -158,13 +200,16 @@
     <Content Include="Scripts\TrafficCop.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <Content Include="Tmpl\_country.admin.tmpl.html" />
     <Content Include="Tmpl\_countries.view.tmpl.html" />
     <Content Include="Tmpl\_linkbutton.tmpl.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CountryRegionController.cs" />
+    <Compile Include="Controllers\DurandalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +219,11 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Durandal\Index.cshtml">
+      <BrowseToURL>~/Durandal/Index</BrowseToURL>
+    </Content>
+    <Content Include="Views\Durandal\_splash.cshtml" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
