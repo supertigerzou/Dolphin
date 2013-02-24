@@ -1,13 +1,17 @@
 ﻿define(function (require) {
     var
-        config = require('/Scripts/app/config.js'),
-        binder = require('/Scripts/app/binder.js'),
-        dataprimer = require('/Scripts/app/dataprimer.js'),
-        countries = require('/Scripts/app/vm.countries.js'),
+        config = require('config'),
+        binder = require('binder'),
+        dataprimer = require('dataprimer'),
+        countries = require('vm.countries'),
+        router = require('router'),
         run = function () {
             config.dataServiceInit();
 
-            $.when(dataprimer.fetch())
+            router.mapNav('vm.countries');
+
+            $.when(router.activate('vm.countries'))
+            .then(dataprimer.fetch())
             .done(function () {
                 countries.activate();
             })

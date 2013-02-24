@@ -1,7 +1,7 @@
 ﻿define(function (require) {
     var
-        dataContext = require('/Scripts/app/datacontext.js'),
-        router = require('/Scripts/app/router.js'),
+        dataContext = require('datacontext'),
+        router = require('router'),
         fetch = function () {
             return $.Deferred(function (def) {
                 var data = {

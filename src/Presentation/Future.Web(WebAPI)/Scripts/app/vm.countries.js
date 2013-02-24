@@ -1,6 +1,6 @@
 ﻿define(function (require) {
     var
-        dataContext = require('/Scripts/app/datacontext.js'),
+        dataContext = require('datacontext'),
         countryTemplate = "countries.view",
         countries = ko.observableArray(),
         activate = function() {

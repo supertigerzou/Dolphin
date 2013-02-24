@@ -2,8 +2,8 @@
 
 define(function (require) {
     var
-        utils = require('/Scripts/app/utils.js'),
-        country = require('/Scripts/app/dataservice.country.js'),
+        utils = require('utils'),
+        country = require('dataservice.country'),
         RecordSet = function () {
             var items = {},
             getData = function (options) {
