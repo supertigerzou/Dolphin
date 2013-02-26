@@ -9,7 +9,6 @@ define(function (require) {
             getData = function (options) {
                 var results = options && options.results;
                 return $.Deferred(function (def) {
-                    $('#busyindicator').text('loading...');
                     country.getCountries({
                         success: function (data) {
                             items = _.reduce(data, function (memo, dto) {

@@ -226,6 +226,7 @@
         isNavigating: isNavigating,
         visibleRoutes: visibleRoutes,
         mapNav: mapNav,
-        activate: activate
+        activate: activate,
+        activeItem: activeItem
     };
 });

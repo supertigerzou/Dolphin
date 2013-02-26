@@ -1,7 +1,8 @@
 ﻿define(function () {
     var
         viewIds = {
-            countries: '#countries-view'
+            countries: '#countries-view',
+            welcome: '#welcome-view'
         },
         dataServiceInit = function () { },
         configExternalTemplate = function () {

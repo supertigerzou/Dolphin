@@ -8,6 +8,7 @@
         };
 
     return {
+        displayName: "Countries",
         activate: activate,
         countryTemplate: countryTemplate,
         countries: countries

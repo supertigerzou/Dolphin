@@ -110,6 +110,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\dataservice.country.js" />
     <Content Include="App\durandal\amd\almond-custom.js" />
     <Content Include="App\durandal\amd\optimizer.exe" />
     <Content Include="App\durandal\amd\r.js" />
@@ -131,6 +132,7 @@
     <Content Include="App\durandal\viewModelBinder.js" />
     <Content Include="App\durandal\widget.js" />
     <Content Include="App\main.js" />
+    <Content Include="App\utils.js" />
     <Content Include="App\viewmodels\administration.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\shell.js" />
@@ -161,7 +163,7 @@
     <Content Include="Scripts\amplify.js" />
     <Content Include="Scripts\amplify.min.js" />
     <Content Include="Scripts\app\binder.js" />
-    <Content Include="Scripts\app\bootstrapper.js" />
+    <Content Include="Scripts\app\shell.js" />
     <Content Include="Scripts\app\config.js" />
     <Content Include="Scripts\app\datacontext.js" />
     <Content Include="Scripts\app\dataprimer.js" />
@@ -172,6 +174,8 @@
     <Content Include="Scripts\app\utils.js" />
     <Content Include="Scripts\app\viewModel.js" />
     <Content Include="Scripts\app\vm.countries.js" />
+    <Content Include="Scripts\app\views\welcome.html" />
+    <Content Include="Scripts\app\welcome.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\infuser-amd.js" />
