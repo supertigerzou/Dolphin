@@ -2,12 +2,12 @@
 using Future.Core.Domain.Course;
 using Future.Data;
 using Future.Services.Course;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Web.Http;
-using System.Linq;
 using Future.Web.ViewModel.Course;
 using Microsoft.Practices.Unity;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Web.Http;
 
 namespace Future.Web_WebAPI_.Controllers
 {
@@ -21,7 +21,7 @@ namespace Future.Web_WebAPI_.Controllers
                 new CourseObjectContext((ConfigurationManager.ConnectionStrings["courseDb"].ConnectionString))),
                 Global.Container.Resolve<ITranslator>()))
         {
-            
+
         }
 
         public CourseController(ICourseContentService courseContentService)
@@ -33,21 +33,6 @@ namespace Future.Web_WebAPI_.Controllers
         public IEnumerable<CourseUnitViewModel> Get()
         {
             return _courseContentService.GetAllUnits().Select(cu => cu.ToModel());
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
         }
     }
 }

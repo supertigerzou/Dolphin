@@ -1,4 +1,5 @@
-﻿using Future.Data.Mapping.Course;
+﻿using System;
+using Future.Data.Mapping.Course;
 using Future.Data.Mapping.Person;
 using Future.Data.Mapping.Sales;
 using System.Data.Entity;
@@ -41,6 +42,7 @@ namespace Future.Data
             : base(connectionString)
         {
             ((IObjectContextAdapter)this).ObjectContext.ContextOptions.LazyLoadingEnabled = lazyLoad;
+            this.Database.Log = Console.WriteLine;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
