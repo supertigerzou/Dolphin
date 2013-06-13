@@ -39,7 +39,7 @@ namespace Future.Web_WebAPI_
             RegisterDependencies(Container);
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             Mapper.CreateMap<Territory, TerritoryViewModel>();
             Mapper.CreateMap<CountryRegion, CountryRegionViewModel>()

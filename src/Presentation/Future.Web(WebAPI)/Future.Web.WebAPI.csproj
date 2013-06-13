@@ -215,6 +215,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -229,9 +237,53 @@
     <Content Include="Content\font\fontawesome-webfont.ttf" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\FontAwesome.otf" />
+    <Content Include="css\styles.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\blog.jpg" />
+    <Content Include="img\github.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\twitter.jpg" />
+    <Content Include="index.html" />
+    <Content Include="js\app.js" />
+    <Content Include="js\models\model-in-memory.js" />
+    <Content Include="js\models\model-parse-com.js" />
+    <Content Include="js\models\model-rest-jsonp.js" />
+    <Content Include="js\models\model-rest.js" />
+    <Content Include="js\views\contact.js" />
+    <Content Include="js\views\employeedetails.js" />
+    <Content Include="js\views\employeelist.js" />
+    <Content Include="js\views\home.js" />
+    <Content Include="js\views\shell.js" />
+    <Content Include="lib\backbone-min.js" />
+    <Content Include="lib\jquery-1.9.1.min.js" />
+    <Content Include="lib\parse-1.2.2.min.js" />
+    <Content Include="lib\underscore-min.js" />
     <Content Include="log4net.config" />
     <None Include="Scripts\amplify-vsdoc.js" />
+    <Content Include="pics\Amy_Jones.jpg" />
+    <Content Include="pics\Amy_Jones50.jpg" />
+    <Content Include="pics\Eugene_Lee.jpg" />
+    <Content Include="pics\Eugene_Lee50.jpg" />
+    <Content Include="pics\Gary_Donovan.jpg" />
+    <Content Include="pics\Gary_Donovan50.jpg" />
+    <Content Include="pics\James_King.jpg" />
+    <Content Include="pics\James_King50.jpg" />
+    <Content Include="pics\John_Williams.jpg" />
+    <Content Include="pics\John_Williams50.jpg" />
+    <Content Include="pics\Julie_Taylor.jpg" />
+    <Content Include="pics\Julie_Taylor50.jpg" />
+    <Content Include="pics\Kathleen_Byrne.jpg" />
+    <Content Include="pics\Kathleen_Byrne50.jpg" />
+    <Content Include="pics\Lisa_Wong.jpg" />
+    <Content Include="pics\Lisa_Wong50.jpg" />
+    <Content Include="pics\Paula_Gates.jpg" />
+    <Content Include="pics\Paula_Gates50.jpg" />
+    <Content Include="pics\Paul_Jones.jpg" />
+    <Content Include="pics\Paul_Jones50.jpg" />
+    <Content Include="pics\Ray_Moore.jpg" />
+    <Content Include="pics\Ray_Moore50.jpg" />
+    <Content Include="pics\Steven_Wells.jpg" />
+    <Content Include="pics\Steven_Wells50.jpg" />
     <Content Include="Scripts\amplify.js" />
     <Content Include="Scripts\amplify.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -262,6 +314,12 @@
     <Content Include="Scripts\TrafficCop.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <Content Include="tpl\ContactView.html" />
+    <Content Include="tpl\EmployeeListItemView.html" />
+    <Content Include="tpl\EmployeeSummaryView.html" />
+    <Content Include="tpl\EmployeeView.html" />
+    <Content Include="tpl\HomeView.html" />
+    <Content Include="tpl\ShellView.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
