@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C62F62C4-A4B8-4BE0-A897-13F0E8B852EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dolphin.Services</RootNamespace>
+    <AssemblyName>Dolphin.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EF.Common">
+      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Configuration">
+      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Configuration.Data">
+      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Configuration.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Data">
+      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Frameworks.Common">
+      <HintPath>..\..\packages\EF.Frameworks.Common.2.0.4694.25094\lib\net40\EF.Frameworks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Globalization">
+      <HintPath>..\..\packages\EF.Globalization.4.2.114.1\lib\net40\EF.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Globalization.Data">
+      <HintPath>..\..\packages\EF.Globalization.4.2.114.1\lib\net40\EF.Globalization.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Lookups">
+      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Lookups.dll</HintPath>
+    </Reference>
+    <Reference Include="EF.Web">
+      <HintPath>..\..\packages\EF.Web.4.2.114.1\lib\net40\EF.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown">
+      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.Data">
+      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.Globalization">
+      <HintPath>..\..\packages\EFSchools.Englishtown.Web.4.1.60.1\lib\net40\EFSchools.Englishtown.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.Globalization.Data">
+      <HintPath>..\..\packages\EFSchools.Englishtown.Web.4.1.60.1\lib\net40\EFSchools.Englishtown.Globalization.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.Memcached.Enyim">
+      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.Memcached.Enyim.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.ServiceModel">
+      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.ServiceModel.Data">
+      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.ServiceModel.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSchools.Englishtown.Web">
+      <HintPath>..\..\packages\EFSchools.Englishtown.Web.4.1.60.1\lib\net40\EFSchools.Englishtown.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching, Version=2.12.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EnyimMemcached.2.12\lib\net35\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="slf4net">
+      <HintPath>..\..\packages\slf4net.0.1.32.1\lib\net35\slf4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Course\CourseContentService.cs" />
+    <Compile Include="Course\ICourseContentService.cs" />
+    <Compile Include="Person\CountryRegionService.cs" />
+    <Compile Include="Person\ICountryRegionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dolphin.Core\Dolphin.Core.csproj">
+      <Project>{8FA85D84-302B-4475-B7E8-BD901F606CA0}</Project>
+      <Name>Dolphin.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
