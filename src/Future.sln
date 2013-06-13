@@ -19,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Services", "Librarie
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{970C8C08-CC52-4995-93D8-6FA7212684AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web(ServiceStack)", "Presentation\Future.Web\Future.Web(ServiceStack).csproj", "{F514ECB9-9898-427C-90C0-5A02CBC26753}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web.ServiceStack", "Presentation\Future.Web\Future.Web.ServiceStack.csproj", "{F514ECB9-9898-427C-90C0-5A02CBC26753}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web(WebAPI)", "Presentation\Future.Web(WebAPI)\Future.Web(WebAPI).csproj", "{EE455B21-5C43-4D4D-9226-DB3C92FBCC26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web.WebAPI", "Presentation\Future.Web(WebAPI)\Future.Web.WebAPI.csproj", "{EE455B21-5C43-4D4D-9226-DB3C92FBCC26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web.Models", "Presentation\Future.Web.ViewModel\Future.Web.Models.csproj", "{EFB96413-0469-4A50-A933-833CFBA4408F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web.ViewModels", "Presentation\Future.Web.ViewModel\Future.Web.ViewModels.csproj", "{EFB96413-0469-4A50-A933-833CFBA4408F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35D794EB-EC9B-4FAD-B6D1-B7E37976095C}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35D794
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web(Troop)", "Presentation\Future.Web(Troop)\Future.Web(Troop).csproj", "{7B4AA14A-659C-4FF4-A81E-D33FEC0267D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Future.Web.Troop", "Presentation\Future.Web(Troop)\Future.Web.Troop.csproj", "{7B4AA14A-659C-4FF4-A81E-D33FEC0267D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

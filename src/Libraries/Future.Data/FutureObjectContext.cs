@@ -1,4 +1,5 @@
-﻿using Future.Data.Mapping.Person;
+﻿using Future.Data.Mapping.Course;
+using Future.Data.Mapping.Person;
 using Future.Data.Mapping.Sales;
 using System.Data.Entity;
 using System.Data.Entity.Config;
@@ -28,6 +29,23 @@ namespace Future.Data
         {
             modelBuilder.Configurations.Add(new CountryRegionMap());
             modelBuilder.Configurations.Add(new TerritoryMap());
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+
+    [DbConfigurationType(typeof(FutureDbConfiguration))]
+    public class CourseObjectContext : DbContext, IDbContext
+    {
+        public CourseObjectContext(string connectionString, bool lazyLoad = true)
+            : base(connectionString)
+        {
+            ((IObjectContextAdapter)this).ObjectContext.ContextOptions.LazyLoadingEnabled = lazyLoad;
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new CourseUnitMap());
 
             base.OnModelCreating(modelBuilder);
         }

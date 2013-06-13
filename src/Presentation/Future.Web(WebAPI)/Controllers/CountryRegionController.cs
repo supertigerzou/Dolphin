@@ -27,7 +27,7 @@ namespace Future.Web_WebAPI_.Controllers
         }
 
         // GET api/<controller>
-        public IEnumerable<CountryRegionModel> Get()
+        public IEnumerable<CountryRegionViewModel> Get()
         {
             return _countryRegionService.GetAll().Select(cr => cr.ToModel());
         }
