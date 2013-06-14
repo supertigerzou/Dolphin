@@ -42,7 +42,6 @@ namespace Dolphin.Data
             : base(connectionString)
         {
             ((IObjectContextAdapter)this).ObjectContext.ContextOptions.LazyLoadingEnabled = lazyLoad;
-            this.Database.Log = Console.WriteLine;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
