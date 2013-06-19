@@ -250,6 +250,7 @@
     <Content Include="js\models\model-rest-jsonp.js" />
     <Content Include="js\models\model-rest.js" />
     <Content Include="js\views\contact.js" />
+    <Content Include="js\views\course.js" />
     <Content Include="js\views\employeedetails.js" />
     <Content Include="js\views\employeelist.js" />
     <Content Include="js\views\home.js" />
@@ -315,6 +316,7 @@
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="tpl\ContactView.html" />
+    <Content Include="tpl\CourseView.html" />
     <Content Include="tpl\EmployeeListItemView.html" />
     <Content Include="tpl\EmployeeSummaryView.html" />
     <Content Include="tpl\EmployeeView.html" />

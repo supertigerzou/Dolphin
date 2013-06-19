@@ -1,14 +1,18 @@
-﻿using Dolphin.Core.Domain.Course;
+﻿using System.Net;
+using System.Net.Http;
+using System.Web.Mvc;
+using Dolphin.Core.Domain.Course;
 using Dolphin.Data;
 using Dolphin.Services.Course;
 using Dolphin.Web.ViewModel.Course;
+using Dolphin.Web.ViewModel.Search;
 using Dolphin.Web_WebAPI_;
 using EFSchools.Englishtown.Resources;
+using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web.Http;
-using Microsoft.Practices.Unity;
 
 namespace Dolphin.Web.WebAPI.Controllers
 {
@@ -34,6 +38,12 @@ namespace Dolphin.Web.WebAPI.Controllers
         public IEnumerable<CourseUnitViewModel> Get()
         {
             return _courseContentService.GetAllUnits().Select(cu => cu.ToModel());
+        }
+
+        [System.Web.Http.HttpPost]
+        public IEnumerable<CourseUnitViewModel> Search(SearchParams searchParams)
+        {
+            return _courseContentService.GetAllUnits().Take(100).Select(cu => cu.ToModel());
         }
     }
 }

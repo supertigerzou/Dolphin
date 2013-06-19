@@ -20,13 +20,19 @@ namespace Dolphin.Services.Course
 
         public IList<CourseUnit> GetAllUnits()
         {
-            var units = _courseUnitRepository.Table.ToList();
+            var units = _courseUnitRepository.Table.Where(unit => unit.Name != null).ToList();
             foreach (var unit in units)
             {
-                if (unit.Name != null && unit.Name.Contains("getTrans::"))
+                if (unit.Name.Contains("getTrans::"))
                 {
                     var blurbId = int.Parse(unit.Name.Substring("getTrans::".Length));
                     unit.Name = this._translator.GetTrans(blurbId, CultureInfo.CreateSpecificCulture("en"));
+                }
+
+                if (unit.Description != null && unit.Description.Contains("getTrans::"))
+                {
+                    var blurbId = int.Parse(unit.Description.Substring("getTrans::".Length));
+                    unit.Description = this._translator.GetTrans(blurbId, CultureInfo.CreateSpecificCulture("en"));
                 }
             }
 

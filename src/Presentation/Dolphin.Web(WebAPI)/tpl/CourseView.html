@@ -1,0 +1,30 @@
+<br />
+<br />
+<br />
+
+<div>
+    <fieldset>
+        <legend>Search (custom, useful for most basic scenarios)</legend>
+        <form action="Api/Course/Search" method="post" enctype="application/x-www-form-urlencoded">
+            <div>
+                <input data-val="true" data-val-required="The SearchDefault field is required." id="SearchDefault" name="SearchDefault" type="checkbox" value="true"><input name="SearchDefault" type="hidden" value="false">
+                <label for="SearchDefault">Use default Lucene query</label>
+            </div>
+            <div>
+                <input autocomplete="off" id="SearchTerm" name="SearchTerm" style="width: 650px;" type="text" value="">
+            </div>
+            <div>
+                <select id="SearchField" name="SearchField" style="width: 150px;">
+                    <option value="">(All Fields)</option>
+                    <option value="Id">Id</option>
+                    <option value="Name">Name</option>
+                    <option value="Description">Description</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Search">
+            </div>
+            <div></div>
+        </form>
+    </fieldset>
+</div>

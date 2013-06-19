@@ -26,9 +26,10 @@ var directory = {
 directory.Router = Backbone.Router.extend({
 
     routes: {
-        "":                 "home",
-        "contact":          "contact",
-        "employees/:id":    "employeeDetails"
+        "": "home",
+        "contact": "contact",
+        "course": "course",
+        "employees/:id": "employeeDetails"
     },
 
     initialize: function () {
@@ -62,6 +63,15 @@ directory.Router = Backbone.Router.extend({
         this.$content.html(directory.contactView.el);
         directory.shellView.selectMenuItem('contact-menu');
     },
+    
+    course: function () {
+        if (!directory.courseView) {
+            directory.courseView = new directory.CourseView();
+            directory.courseView.render();
+        }
+        this.$content.html(directory.courseView.el);
+        directory.shellView.selectMenuItem('course-menu');
+    },
 
     employeeDetails: function (id) {
         var employee = new directory.Employee({id: id});
@@ -80,7 +90,7 @@ directory.Router = Backbone.Router.extend({
 });
 
 $(document).on("ready", function () {
-    directory.loadTemplates(["HomeView", "ContactView", "ShellView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView"],
+    directory.loadTemplates(["HomeView", "ContactView", "CourseView", "ShellView", "EmployeeView", "EmployeeSummaryView", "EmployeeListItemView"],
         function () {
             directory.router = new directory.Router();
             Backbone.history.start();

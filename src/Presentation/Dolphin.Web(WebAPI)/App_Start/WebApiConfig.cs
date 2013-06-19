@@ -16,8 +16,8 @@ namespace Dolphin.Web_WebAPI_.App_Start
 
             var jqueryFormatter = config.Formatters.FirstOrDefault(x => x.GetType() == typeof(JQueryMvcFormUrlEncodedFormatter));
             config.Formatters.Remove(config.Formatters.XmlFormatter);
-            config.Formatters.Remove(config.Formatters.FormUrlEncodedFormatter);
-            config.Formatters.Remove(jqueryFormatter);
+            //config.Formatters.Remove(config.Formatters.FormUrlEncodedFormatter);
+            //config.Formatters.Remove(jqueryFormatter);
         }
     }
 }

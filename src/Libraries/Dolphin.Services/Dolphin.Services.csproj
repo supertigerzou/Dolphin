@@ -87,6 +87,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\EnyimMemcached.2.12\lib\net35\Enyim.Caching.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
     <Reference Include="slf4net">
       <HintPath>..\..\packages\slf4net.0.1.32.1\lib\net35\slf4net.dll</HintPath>
     </Reference>
@@ -114,6 +120,8 @@
     <Compile Include="Person\CountryRegionService.cs" />
     <Compile Include="Person\ICountryRegionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\ISearchService.cs" />
+    <Compile Include="Search\SearchService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dolphin.Core\Dolphin.Core.csproj">

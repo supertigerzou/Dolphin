@@ -12,6 +12,7 @@ namespace Dolphin.Data.Mapping.Course
             this.Property(cu => cu.Id).HasColumnName("CourseUnit_id");
             this.Property(cu => cu.No).HasColumnName("UnitNo");
             this.Property(cu => cu.Name).HasColumnName("UnitName");
+            this.Property(cu => cu.Description).HasColumnName("UnitDescr");
         }
     }
 }
