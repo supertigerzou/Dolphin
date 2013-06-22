@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using AutoMapper;
+﻿using AutoMapper;
 using Dolphin.Core.Domain.Course;
 using Dolphin.Core.Domain.Person;
 using Dolphin.Core.Domain.Sales;
@@ -12,8 +11,9 @@ using Dolphin.Web.ViewModel.Sales;
 using Dolphin.Web_WebAPI_;
 using Dolphin.Web_WebAPI_.App_Start;
 using EF.Web.Unity;
-using EFSchools.Englishtown.Resources;
+using EFSchools.Englishtown.Web;
 using Microsoft.Practices.Unity;
+using System.Configuration;
 using System.Linq;
 using System.Web.Http;
 
@@ -52,7 +52,7 @@ namespace Dolphin.Web.WebAPI
             var courseContentService = new CourseContentService(
                 new EntityFrameworkRepository<CourseUnit>(
                     new CourseObjectContext((ConfigurationManager.ConnectionStrings["courseDb"].ConnectionString))),
-                Global.Container.Resolve<ITranslator>());
+                Global.Container.Resolve<Translator>());
             ISearchService searchService = new SearchService();
             searchService.AddUpdateIndex(courseContentService.GetAllUnits());
         }

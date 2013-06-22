@@ -14,5 +14,8 @@ namespace Dolphin.Core.Domain.Course
 
         [Alias("UnitDescr")]
         public virtual string Description { get; set; }
+
+        [Alias("UnitImageUrl")]
+        public virtual string ImageUrl { get; set; }
     }
 }

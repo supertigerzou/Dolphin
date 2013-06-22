@@ -1,13 +1,11 @@
-﻿using System.Net;
-using System.Net.Http;
-using System.Web.Mvc;
-using Dolphin.Core.Domain.Course;
+﻿using Dolphin.Core.Domain.Course;
 using Dolphin.Data;
 using Dolphin.Services.Course;
+using Dolphin.Services.Search;
 using Dolphin.Web.ViewModel.Course;
 using Dolphin.Web.ViewModel.Search;
 using Dolphin.Web_WebAPI_;
-using EFSchools.Englishtown.Resources;
+using EFSchools.Englishtown.Web;
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Configuration;
@@ -19,19 +17,22 @@ namespace Dolphin.Web.WebAPI.Controllers
     public class CourseController : ApiController
     {
         private readonly ICourseContentService _courseContentService;
+        private readonly ISearchService _searchService;
 
         public CourseController()
             : this(new CourseContentService(
                 new EntityFrameworkRepository<CourseUnit>(
                 new CourseObjectContext((ConfigurationManager.ConnectionStrings["courseDb"].ConnectionString))),
-                Global.Container.Resolve<ITranslator>()))
+                Global.Container.Resolve<Translator>()), 
+                new SearchService())
         {
 
         }
 
-        public CourseController(ICourseContentService courseContentService)
+        public CourseController(ICourseContentService courseContentService, ISearchService searchService)
         {
             this._courseContentService = courseContentService;
+            this._searchService = searchService;
         }
 
         // GET api/<controller>
@@ -40,10 +41,10 @@ namespace Dolphin.Web.WebAPI.Controllers
             return _courseContentService.GetAllUnits().Select(cu => cu.ToModel());
         }
 
-        [System.Web.Http.HttpPost]
+        [HttpPost]
         public IEnumerable<CourseUnitViewModel> Search(SearchParams searchParams)
         {
-            return _courseContentService.GetAllUnits().Take(100).Select(cu => cu.ToModel());
+            return _searchService.Search(searchParams.SearchTerm).Select(cu => cu.ToModel());
         }
     }
 }
