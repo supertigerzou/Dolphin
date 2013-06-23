@@ -1,6 +1,5 @@
 <br />
 <br />
-<br />
 
 <div>
     <fieldset>
@@ -28,69 +27,83 @@
             </div>
         </form>
     </fieldset>
-    <div class="demo-section">
+    <div class="result-section">
         <h2>Search Results:</h2>
-        <div id="searchResults"></div>
+        <div id="searchResults">
+            <div class="loader">
+                <i class="icon-spinner icon-2x icon-spin"></i>
+            </div>
+        </div>
         <div id="pager" class="k-pager-wrap"></div>
     </div>
+</div>
 
-    <style scoped>
-        .demo-section {
-            padding: 15px;
-            width: 1000px;
+<style scoped>
+    .loader {
+        margin: 6px 8px 4px 8px;
+        visibility: hidden;
+    }
+
+        .loader.active {
+            visibility: visible;
         }
 
-            .demo-section h2 {
-                font-size: 1.2em;
-                margin-bottom: 10px;
-                text-transform: uppercase;
-            }
+    .result-section {
+        padding: 15px;
+        width: 1000px;
+    }
 
-            .demo-section .console {
-                margin: 0;
-            }
+        .result-section h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-        .courseUnit {
-            float: left;
-            width: 250px;
-            height: 110px;
+        .result-section .console {
             margin: 0;
-            padding: 5px;
-            cursor: pointer;
         }
 
-            .courseUnit img {
-                float: left;
-                width: 120px;
-                height: 90px;
-            }
+    .courseUnit {
+        float: left;
+        width: 250px;
+        height: 110px;
+        margin: 0;
+        padding: 5px;
+        cursor: pointer;
+    }
 
-            .courseUnit h3 {
-                margin: 0;
-                padding: 10px 0 0 10px;
-                font-size: .9em;
-                overflow: hidden;
-                font-weight: normal;
-                float: left;
-                max-width: 100px;
-                text-transform: uppercase;
-            }
-
-        .k-pager-wrap {
-            border-top: 0;
+        .courseUnit img {
+            float: left;
+            width: 120px;
+            height: 90px;
         }
 
-        .k-listview:after {
-            content: ".";
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
+        .courseUnit h3 {
+            margin: 0;
+            padding: 10px 0 0 10px;
+            font-size: .9em;
+            overflow: hidden;
+            font-weight: normal;
+            float: left;
+            max-width: 100px;
+            text-transform: uppercase;
         }
 
-        .k-listview {
-            padding: 0;
-            min-width: 690px;
-            min-height: 360px;
-        }
-    </style>
+    .k-pager-wrap {
+        border-top: 0;
+    }
+
+    .k-listview:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .k-listview {
+        padding: 0;
+        min-width: 690px;
+        min-height: 360px;
+    }
+</style>

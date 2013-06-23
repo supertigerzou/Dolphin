@@ -227,16 +227,13 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome-ie7.css" />
     <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\font\fontawesome-webfont.woff" />
-    <Content Include="Content\font\fontawesome-webfont.ttf" />
-    <Content Include="Content\font\fontawesome-webfont.eot" />
-    <Content Include="Content\font\FontAwesome.otf" />
     <Content Include="Content\kendo\2013.1.319\Black\editor.png" />
     <Content Include="Content\kendo\2013.1.319\Black\imagebrowser.png" />
     <Content Include="Content\kendo\2013.1.319\Black\loading-image.gif" />
@@ -384,6 +381,10 @@
     <Content Include="lib\parse-1.2.2.min.js" />
     <Content Include="lib\underscore-min.js" />
     <Content Include="log4net.config" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font\FontAwesome.otf" />
     <None Include="Scripts\amplify-vsdoc.js" />
     <Content Include="pics\Amy_Jones.jpg" />
     <Content Include="pics\Amy_Jones50.jpg" />
@@ -854,8 +855,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\ViewModelConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\CountryRegionController.cs" />
     <Compile Include="Global.asax.cs">

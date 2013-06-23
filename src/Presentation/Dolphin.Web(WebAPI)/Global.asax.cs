@@ -1,19 +1,8 @@
-﻿using AutoMapper;
-using Dolphin.Core.Domain.Course;
-using Dolphin.Core.Domain.Person;
-using Dolphin.Core.Domain.Sales;
-using Dolphin.Data;
-using Dolphin.Services.Course;
+﻿using Dolphin.Services.Course;
 using Dolphin.Services.Search;
-using Dolphin.Web.ViewModel.Course;
-using Dolphin.Web.ViewModel.Person;
-using Dolphin.Web.ViewModel.Sales;
 using Dolphin.Web.WebAPI.App_Start;
-using Dolphin.Web_WebAPI_;
 using EF.Web.Unity;
-using EFSchools.Englishtown.Web;
 using Microsoft.Practices.Unity;
-using System.Linq;
 using System.Web.Http;
 using System.Web.Routing;
 
@@ -39,27 +28,12 @@ namespace Dolphin.Web.WebAPI
         {
             base.OnApplicationStart();
 
-            RegisterDependencies(Container);
-
+            UnityConfig.RegisterTypes(Container);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ViewModelConfig.RegisterMappings();
 
-            Mapper.CreateMap<Territory, TerritoryViewModel>();
-            Mapper.CreateMap<CountryRegion, CountryRegionViewModel>()
-                .ForMember(crm => crm.Territories, mo => mo.MapFrom(cr => cr.Territories.Select(t => t.ToModel()).ToArray()));
-            Mapper.CreateMap<CourseUnit, CourseUnitViewModel>();
-
-            var courseContentService = new CourseContentService(
-                new EntityFrameworkRepository<CourseUnit>(new CourseObjectContext("courseDb")),
-                Container.Resolve<Translator>()
-            );
-            ISearchService searchService = new SearchService();
-            searchService.AddUpdateIndex(courseContentService.GetAllUnits());
-        }
-
-        private static void RegisterDependencies(IUnityContainer container)
-        {
-            container.RegisterInstance(typeof(IUnityContainer), container);
+            Container.Resolve<ISearchService>().AddUpdateIndex(Container.Resolve<ICourseContentService>().GetAllUnits());
         }
     }
 }

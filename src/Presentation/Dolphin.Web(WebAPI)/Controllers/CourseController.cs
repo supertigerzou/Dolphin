@@ -1,11 +1,7 @@
-﻿using Dolphin.Core.Domain.Course;
-using Dolphin.Data;
-using Dolphin.Services.Course;
+﻿using Dolphin.Services.Course;
 using Dolphin.Services.Search;
 using Dolphin.Web.ViewModel.Course;
 using Dolphin.Web.ViewModel.Search;
-using Dolphin.Web_WebAPI_;
-using EFSchools.Englishtown.Web;
 using Microsoft.Practices.Unity;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +15,7 @@ namespace Dolphin.Web.WebAPI.Controllers
         private readonly ISearchService _searchService;
 
         public CourseController()
-            : this(new CourseContentService(
-                new EntityFrameworkRepository<CourseUnit>(new CourseObjectContext("courseDb")),
-                Global.Container.Resolve<Translator>()),
-                new SearchService())
+            : this(Global.Container.Resolve<ICourseContentService>(), Global.Container.Resolve<ISearchService>())
         {
 
         }

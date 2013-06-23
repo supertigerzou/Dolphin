@@ -16,11 +16,11 @@ directory.CourseView = Backbone.View.extend({
         "keypress #searchTerm": "onkeypress"
     },
     
-    search: function (event) {
+    search: function () {
         var key = $('#searchTerm').val();
         this.searchResults.fetch({ reset: true, data: { SearchTerm: key } });
         setTimeout(function () {
-            $('#searchUnit').addClass('open');
+            $('.loader').addClass('active');
         });
     },
     
@@ -29,6 +29,6 @@ directory.CourseView = Backbone.View.extend({
             event.preventDefault();
             this.search(event);
         }
-    },
+    }
 
 });

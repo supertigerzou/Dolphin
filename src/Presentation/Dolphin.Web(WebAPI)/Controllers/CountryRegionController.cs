@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Web.Http;
 using System.Linq;
 using Dolphin.Web.ViewModel.Person;
+using Dolphin.Web.WebAPI;
 
 namespace Dolphin.Web_WebAPI_.Controllers
 {
