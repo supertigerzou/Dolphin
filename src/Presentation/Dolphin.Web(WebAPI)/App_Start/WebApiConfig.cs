@@ -2,7 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 
-namespace Dolphin.Web_WebAPI_.App_Start
+namespace Dolphin.Web.WebAPI.App_Start
 {
     public static class WebApiConfig
     {
@@ -10,7 +10,7 @@ namespace Dolphin.Web_WebAPI_.App_Start
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 

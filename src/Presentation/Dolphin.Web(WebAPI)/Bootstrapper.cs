@@ -2,7 +2,7 @@ using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc3;
 
-namespace Dolphin.Web_WebAPI_
+namespace Dolphin.Web.WebAPI
 {
     public static class Bootstrapper
     {

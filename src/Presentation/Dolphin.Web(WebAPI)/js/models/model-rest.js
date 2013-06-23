@@ -12,23 +12,34 @@
 
  */
 
-directory.Employee = Backbone.Model.extend({
+//directory.Employee = Backbone.Model.extend({
 
-    //urlRoot:"/directory-rest-php/employees",
-    urlRoot:"http://localhost:3000/employees",
+//    //urlRoot:"/directory-rest-php/employees",
+//    urlRoot:"http://localhost:3000/employees",
 
-    initialize:function () {
-        this.reports = new directory.EmployeeCollection();
-        this.reports.url = this.urlRoot + "/" + this.id + "/reports";
+//    initialize:function () {
+//        this.reports = new directory.EmployeeCollection();
+//        this.reports.url = this.urlRoot + "/" + this.id + "/reports";
+//    }
+
+//});
+
+//directory.EmployeeCollection = Backbone.Collection.extend({
+
+//    model: directory.Employee,
+
+//    //url:"/directory-rest-php/employees"
+//    url:"http://localhost:3000/employees"
+
+//});
+
+directory.CourseUnit = Backbone.Model.extend({
+    initialize: function () {
+
     }
-
 });
 
-directory.EmployeeCollection = Backbone.Collection.extend({
-
-    model: directory.Employee,
-
-    //url:"/directory-rest-php/employees"
-    url:"http://localhost:3000/employees"
-
+directory.CourseUnitCollection = Backbone.Collection.extend({
+    model: directory.CourseUnit,
+    url: "http://localhost/Dolphin.Web.WebAPI/Api/Course/Search"
 });

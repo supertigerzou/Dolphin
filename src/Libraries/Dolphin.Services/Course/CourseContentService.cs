@@ -1,9 +1,8 @@
 using Dolphin.Core.Data;
 using Dolphin.Core.Domain.Course;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using EFSchools.Englishtown.Web;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Dolphin.Services.Course
 {
@@ -11,6 +10,7 @@ namespace Dolphin.Services.Course
     {
         private readonly IRepository<CourseUnit> _courseUnitRepository;
         private readonly Translator _translator;
+        private const string ImageNotFound = @"\Juno\NotFound.jpg";
 
         public CourseContentService(IRepository<CourseUnit> courseUnitRepository, Translator translator)
         {
@@ -20,7 +20,9 @@ namespace Dolphin.Services.Course
 
         public IList<CourseUnit> GetAllUnits()
         {
-            var units = _courseUnitRepository.Table.Where(unit => unit.Name != null).ToList();
+            var units = _courseUnitRepository.Table.Where(unit => unit.Name != null && 
+                !string.IsNullOrEmpty(unit.Description) &&
+                !string.IsNullOrEmpty(unit.ImageUrl)).ToList();
             foreach (var unit in units)
             {
                 if (unit.Name.Contains("getTrans::"))
@@ -42,7 +44,7 @@ namespace Dolphin.Services.Course
                 }
                 else
                 {
-                    unit.ImageUrl = string.Empty;
+                    unit.ImageUrl = ImageNotFound;
                 }
             }
 

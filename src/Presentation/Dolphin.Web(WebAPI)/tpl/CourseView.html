@@ -5,26 +5,92 @@
 <div>
     <fieldset>
         <legend>Search (custom, useful for most basic scenarios)</legend>
-        <form action="Api/Course/Search" method="post" enctype="application/x-www-form-urlencoded">
-            <div>
-                <input data-val="true" data-val-required="The SearchDefault field is required." id="SearchDefault" name="SearchDefault" type="checkbox" value="true"><input name="SearchDefault" type="hidden" value="false">
-                <label for="SearchDefault">Use default Lucene query</label>
+        <form class="form-search" enctype="application/x-www-form-urlencoded">
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox">Use default Lucene query
+                    </label>
+                </div>
             </div>
-            <div>
-                <input autocomplete="off" id="SearchTerm" name="SearchTerm" style="width: 650px;" type="text" value="">
+            <div class="control-group">
+                <div class="controls">
+                    <input autocomplete="off" id="searchTerm" name="SearchTerm" class="input-medium search-query"
+                        type="text" value="" style="width: 450px;">
+                    <select id="SearchField" name="SearchField" style="width: 150px;">
+                        <option value="">(All Fields)</option>
+                        <option value="Id">Id</option>
+                        <option value="Name">Name</option>
+                        <option value="Description">Description</option>
+                    </select>
+                    <button type="button" id="searchUnit" class="btn">Search</button>
+                </div>
             </div>
-            <div>
-                <select id="SearchField" name="SearchField" style="width: 150px;">
-                    <option value="">(All Fields)</option>
-                    <option value="Id">Id</option>
-                    <option value="Name">Name</option>
-                    <option value="Description">Description</option>
-                </select>
-            </div>
-            <div>
-                <input type="submit" value="Search">
-            </div>
-            <div></div>
         </form>
     </fieldset>
-</div>
+    <div class="demo-section">
+        <h2>Search Results:</h2>
+        <div id="searchResults"></div>
+        <div id="pager" class="k-pager-wrap"></div>
+    </div>
+
+    <style scoped>
+        .demo-section {
+            padding: 15px;
+            width: 1000px;
+        }
+
+            .demo-section h2 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .demo-section .console {
+                margin: 0;
+            }
+
+        .courseUnit {
+            float: left;
+            width: 250px;
+            height: 110px;
+            margin: 0;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+            .courseUnit img {
+                float: left;
+                width: 120px;
+                height: 90px;
+            }
+
+            .courseUnit h3 {
+                margin: 0;
+                padding: 10px 0 0 10px;
+                font-size: .9em;
+                overflow: hidden;
+                font-weight: normal;
+                float: left;
+                max-width: 100px;
+                text-transform: uppercase;
+            }
+
+        .k-pager-wrap {
+            border-top: 0;
+        }
+
+        .k-listview:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .k-listview {
+            padding: 0;
+            min-width: 690px;
+            min-height: 360px;
+        }
+    </style>

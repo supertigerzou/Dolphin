@@ -30,11 +30,10 @@ directory.EmployeeCollection = Backbone.Collection.extend({
 
 });
 
-var originalSync = Backbone.sync;
-Backbone.sync = function (method, model, options) {
-    if (method === "read") {
-        options.dataType = "jsonp";
-        return originalSync.apply(Backbone, arguments);
-    }
-
-};
+//var originalSync = Backbone.sync;
+//Backbone.sync = function (method, model, options) {
+//    if (method === "read") {
+//        options.dataType = "jsonp";
+//        return originalSync.apply(Backbone, arguments);
+//    }
+//};

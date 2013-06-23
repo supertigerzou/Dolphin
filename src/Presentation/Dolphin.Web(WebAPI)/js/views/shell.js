@@ -12,8 +12,8 @@ directory.ShellView = Backbone.View.extend({
     },
 
     events: {
-        "keyup .search-query": "search",
-        "keypress .search-query": "onkeypress"
+        "keyup #searchText": "search",
+        "keypress #searchText": "onkeypress"
     },
 
     search: function (event) {

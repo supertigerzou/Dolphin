@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Dolphin.Web_WebAPI_.App_Start
+namespace Dolphin.Web.WebAPI.App_Start
 {
     public class RouteConfig
     {

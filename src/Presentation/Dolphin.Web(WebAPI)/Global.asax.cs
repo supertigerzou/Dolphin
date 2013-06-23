@@ -8,14 +8,14 @@ using Dolphin.Services.Search;
 using Dolphin.Web.ViewModel.Course;
 using Dolphin.Web.ViewModel.Person;
 using Dolphin.Web.ViewModel.Sales;
+using Dolphin.Web.WebAPI.App_Start;
 using Dolphin.Web_WebAPI_;
-using Dolphin.Web_WebAPI_.App_Start;
 using EF.Web.Unity;
 using EFSchools.Englishtown.Web;
 using Microsoft.Practices.Unity;
-using System.Configuration;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Routing;
 
 namespace Dolphin.Web.WebAPI
 {
@@ -42,7 +42,7 @@ namespace Dolphin.Web.WebAPI
             RegisterDependencies(Container);
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
-            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             Mapper.CreateMap<Territory, TerritoryViewModel>();
             Mapper.CreateMap<CountryRegion, CountryRegionViewModel>()
@@ -50,9 +50,9 @@ namespace Dolphin.Web.WebAPI
             Mapper.CreateMap<CourseUnit, CourseUnitViewModel>();
 
             var courseContentService = new CourseContentService(
-                new EntityFrameworkRepository<CourseUnit>(
-                    new CourseObjectContext((ConfigurationManager.ConnectionStrings["courseDb"].ConnectionString))),
-                Global.Container.Resolve<Translator>());
+                new EntityFrameworkRepository<CourseUnit>(new CourseObjectContext("courseDb")),
+                Container.Resolve<Translator>()
+            );
             ISearchService searchService = new SearchService();
             searchService.AddUpdateIndex(courseContentService.GetAllUnits());
         }
