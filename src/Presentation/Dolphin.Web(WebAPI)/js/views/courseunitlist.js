@@ -2,7 +2,11 @@ directory.CourseUnitListView = Backbone.View.extend({
 
     tagName:'ul',
 
-    className:'nav nav-list',
+    className: 'nav nav-list',
+    
+    events: {
+        "click .k-link": "changePage"
+    },
 
     initialize:function () {
         var self = this;
@@ -10,32 +14,23 @@ directory.CourseUnitListView = Backbone.View.extend({
         this.model.on("add", function (courseUnit) {
             self.$el.append(new directory.CourseUnitListItemView({model:courseUnit}).render().el);
         });
+        this.toPage = 1;
+        this.pageSize = 9;
     },
 
     render: function () {
-        var courseUnits = [];
         this.$el.empty();
-        _.each(this.model.models, function (courseUnit) {
-            //this.$el.append(new directory.CourseUnitListItemView({model:courseUnit}).render().el);
-            courseUnits.push(_.clone(courseUnit.attributes));
+        _.each(_.first(_.rest(this.model.models, (this.toPage - 1) * this.pageSize), this.pageSize), function (courseUnit) {
+            this.$el.append(new directory.CourseUnitListItemView({model:courseUnit}).render().el);
         }, this);
-        
-        var dataSource = new kendo.data.DataSource({
-            data: courseUnits,
-            pageSize: 9
-        });
-        
-        $("#pager").kendoPager({
-            dataSource: dataSource
-        });
-        
-        $("#searchResults").kendoListView({
-            dataSource: dataSource,
-            selectable: "multiple",
-            template: kendo.template(this.template({}))
-        });
+        this.$el.append(this.template({}));
 
         return this;
+    },
+    
+    changePage: function (event) {
+        this.toPage = event.target.dataset.page;
+        this.render();
     }
 });
 

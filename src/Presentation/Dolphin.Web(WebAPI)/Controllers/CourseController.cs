@@ -26,7 +26,8 @@ namespace Dolphin.Web.WebAPI.Controllers
             this._searchService = searchService;
         }
 
-        public IEnumerable<CourseUnitViewModel> Get()
+        [HttpGet]
+        public IEnumerable<CourseUnitViewModel> Units()
         {
             return _courseContentService.GetAllUnits().Select(cu => cu.ToModel());
         }
