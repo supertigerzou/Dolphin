@@ -1,18 +1,19 @@
 directory.CourseView = Backbone.View.extend({
 
     initialize: function () {
+        this.pagingModel = new Backbone.Model({ pageSize: 9, currentPage: 1, totalCount: 0 });
         this.searchResults = new directory.CourseUnitCollection();
         this.filteredSearchResults = new directory.CourseUnitCollection();
         this.searchresultsView = new directory.CourseUnitListView({
             model: this.filteredSearchResults, className: 'search-results'
         });
-        this.toPage = 1;
-        this.pageSize = 9;
+        this.pagingView = new directory.PagingView({ model: this.pagingModel });
     },
     
     render:function () {
         this.$el.html(this.template());
         $('#searchResults', this.el).append(this.searchresultsView.render().el);
+        $('.result-section', this.el).append(this.pagingView.render().el);
         return this;
     },
     
@@ -27,7 +28,9 @@ directory.CourseView = Backbone.View.extend({
         this.searchResults.fetch({
             reset: true, data: { SearchTerm: key },
             success: _.bind(function (model, resp, options) {
-                this.filteredSearchResults.reset(model.slice(0, 9));
+                this.filteredSearchResults.reset(model
+                    .slice((this.pagingModel.get('currentPage') - 1) * this.pagingModel.get('pageSize'),
+                            this.pagingModel.get('currentPage') * this.pagingModel.get('pageSize')));
             }, this)
         });
         setTimeout(function () {
@@ -43,8 +46,10 @@ directory.CourseView = Backbone.View.extend({
     },
     
     changePage: function (event) {
-        var pageTo = event.target.dataset.page;
-        this.filteredSearchResults.reset(this.searchResults.slice(9 * (pageTo - 1), 9 * pageTo));
+        this.pagingModel.set('currentPage', event.target.dataset.page);
+        this.filteredSearchResults.reset(this.searchResults
+            .slice((this.pagingModel.get('currentPage') - 1) * this.pagingModel.get('pageSize'),
+                    this.pagingModel.get('currentPage') * this.pagingModel.get('pageSize')));
     }
 
 });
