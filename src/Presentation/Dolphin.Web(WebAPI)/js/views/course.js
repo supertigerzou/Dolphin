@@ -2,7 +2,12 @@ directory.CourseView = Backbone.View.extend({
 
     initialize: function () {
         this.searchResults = new directory.CourseUnitCollection();
-        this.searchresultsView = new directory.CourseUnitListView({ model: this.searchResults, className: 'search-results' });
+        this.filteredSearchResults = new directory.CourseUnitCollection();
+        this.searchresultsView = new directory.CourseUnitListView({
+            model: this.filteredSearchResults, className: 'search-results'
+        });
+        this.toPage = 1;
+        this.pageSize = 9;
     },
     
     render:function () {
@@ -13,12 +18,18 @@ directory.CourseView = Backbone.View.extend({
     
     events: {
         "click #searchUnit": "search",
-        "keypress #searchTerm": "onkeypress"
+        "keypress #searchTerm": "onkeypress",
+        "click .k-link": "changePage"
     },
     
     search: function () {
         var key = $('#searchTerm').val();
-        this.searchResults.fetch({ reset: true, data: { SearchTerm: key } });
+        this.searchResults.fetch({
+            reset: true, data: { SearchTerm: key },
+            success: _.bind(function (model, resp, options) {
+                this.filteredSearchResults.reset(model.slice(0, 9));
+            }, this)
+        });
         setTimeout(function () {
             $('.loader').addClass('active');
         });
@@ -27,8 +38,13 @@ directory.CourseView = Backbone.View.extend({
     onkeypress: function (event) {
         if (event.keyCode === 13) { // enter key pressed
             event.preventDefault();
-            this.search(event);
+            this.search();
         }
+    },
+    
+    changePage: function (event) {
+        var pageTo = event.target.dataset.page;
+        this.filteredSearchResults.reset(this.searchResults.slice(9 * (pageTo - 1), 9 * pageTo));
     }
 
 });

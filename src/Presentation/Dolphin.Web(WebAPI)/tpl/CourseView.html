@@ -30,7 +30,21 @@
     <div class="result-section">
         <h2>Search Results:</h2>
         <div id="searchResults" data-role="listview" class="k-widget k-listview k-selectable" role="listbox" aria-multiselectable="true">
-        </div>        
+        </div>
+        <div id="pager" class="k-pager-wrap k-widget" data-role="pager">
+            <a href="#" title="Go to the first page" class="k-link" data-page="1" tabindex="-1"><span class="k-icon k-i-seek-w">Go to the first page</span></a><a href="#" title="Go to the previous page" class="k-link" data-page="2" tabindex="-1"><span class="k-icon k-i-arrow-w">Go to the previous page</span></a><ul class="k-pager-numbers k-reset">
+                <li><a tabindex="-1" class="k-link" data-page="1">1</a></li>
+                <li><a tabindex="-1" class="k-link" data-page="2">2</a></li>
+                <li><a tabindex="-1" class="k-link" data-page="3">3</a></li>
+            </ul>
+            <a href="#" title="Go to the next page" class="k-link k-state-disabled" data-page="3" tabindex="-1">
+                <span class="k-icon k-i-arrow-e">Go to the next page</span>
+            </a>
+            <a href="#" title="Go to the last page" class="k-link k-state-disabled" data-page="3" tabindex="-1">
+                <span class="k-icon k-i-seek-e">Go to the last page</span>
+            </a>
+            <span class="k-pager-info k-label">19 - 19 of <%= totalCount %> items</span>
+        </div>
     </div>
 </div>
 
