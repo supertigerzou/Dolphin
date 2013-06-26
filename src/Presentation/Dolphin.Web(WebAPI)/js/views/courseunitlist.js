@@ -17,7 +17,6 @@ directory.CourseUnitListView = Backbone.View.extend({
         _.each(this.model.models, function (courseUnit) {
             this.$el.append(new directory.CourseUnitListItemView({model:courseUnit}).render().el);
         }, this);
-        this.$el.append(this.template());
 
         return this;
     }

@@ -1,9 +1,6 @@
-<br />
-<br />
-
+<br /><br />
 <div>
     <fieldset>
-        <legend>Search (custom, useful for most basic scenarios)</legend>
         <form class="form-search" enctype="application/x-www-form-urlencoded">
             <div class="control-group">
                 <div class="controls">
@@ -15,7 +12,7 @@
             <div class="control-group">
                 <div class="controls">
                     <input autocomplete="off" id="searchTerm" name="SearchTerm" class="input-medium search-query"
-                        type="text" value="" style="width: 450px;">
+                        type="text" value="" style="width: 450px;" autofocus="autofocus">
                     <select id="SearchField" name="SearchField" style="width: 150px;">
                         <option value="">(All Fields)</option>
                         <option value="Id">Id</option>
@@ -27,8 +24,7 @@
             </div>
         </form>
     </fieldset>
-    <div class="result-section">
-        <h2>Search Results:</h2>
+    <div class="result-section" style="display: none">
         <div id="searchResults" data-role="listview" class="k-widget k-listview k-selectable" role="listbox" aria-multiselectable="true">
         </div>
     </div>
@@ -46,7 +42,7 @@
 
     .result-section {
         padding: 15px;
-        width: 1000px;
+        width: 100%;
     }
 
         .result-section h2 {
@@ -61,7 +57,7 @@
 
     .courseUnit {
         float: left;
-        width: 250px;
+        width: 130px;
         height: 110px;
         margin: 0;
         padding: 5px;
@@ -99,7 +95,7 @@
 
     .k-listview {
         padding: 0;
-        min-width: 690px;
-        min-height: 360px;
+        min-width: 260px;
+        min-height: 100px;
     }
 </style>

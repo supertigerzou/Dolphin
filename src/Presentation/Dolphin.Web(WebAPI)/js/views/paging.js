@@ -6,7 +6,7 @@ directory.PagingView = Backbone.View.extend({
 
     initialize:function (options) {
         var self = this;
-        this.model.on("reset", this.render, this);
+        this.model.on("change", this.render, this);
     },
 
     render: function () {
