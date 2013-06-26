@@ -844,7 +844,6 @@
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="tpl\ContactView.html" />
-    <Content Include="tpl\CourseUnitListView.html" />
     <Content Include="tpl\CourseUnitListItemView.html" />
     <Content Include="tpl\CourseView.html" />
     <Content Include="tpl\EmployeeListItemView.html" />
