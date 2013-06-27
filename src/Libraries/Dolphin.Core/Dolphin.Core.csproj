@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Domain\Course\CourseLesson.cs" />
     <Compile Include="Domain\Course\CourseUnit.cs" />
     <Compile Include="Domain\Person\CountryRegion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,29 +1,20 @@
 <br /><br />
 <div>
-    <fieldset>
-        <form class="form-search" enctype="application/x-www-form-urlencoded">
-            <div class="control-group">
-                <div class="controls">
-                    <label class="checkbox">
-                        <input type="checkbox">Use default Lucene query
-                    </label>
-                </div>
+    <form class="form-search" enctype="application/x-www-form-urlencoded">
+        <div class="control-group">
+            <div class="controls">
+                <input autocomplete="off" id="searchTerm" name="SearchTerm" class="input-medium search-query"
+                       type="text" value="" style="width: 450px;" autofocus="autofocus">
+                <select id="SearchField" name="SearchField" style="width: 150px;">
+                    <option value="">(All Fields)</option>
+                    <option value="Id">Id</option>
+                    <option value="Name">Name</option>
+                    <option value="Description">Description</option>
+                </select>
+                <button type="button" id="searchUnit" class="btn">Search</button>
             </div>
-            <div class="control-group">
-                <div class="controls">
-                    <input autocomplete="off" id="searchTerm" name="SearchTerm" class="input-medium search-query"
-                        type="text" value="" style="width: 450px;" autofocus="autofocus">
-                    <select id="SearchField" name="SearchField" style="width: 150px;">
-                        <option value="">(All Fields)</option>
-                        <option value="Id">Id</option>
-                        <option value="Name">Name</option>
-                        <option value="Description">Description</option>
-                    </select>
-                    <button type="button" id="searchUnit" class="btn">Search</button>
-                </div>
-            </div>
-        </form>
-    </fieldset>
+        </div>
+    </form>
     <div class="result-section" style="display: none">
         <div id="searchResults" data-role="listview" class="k-widget k-listview k-selectable" role="listbox" aria-multiselectable="true">
         </div>

@@ -1,5 +1,6 @@
 using Dolphin.Core.Data;
 using Dolphin.Core.Domain.Course;
+using Dolphin.Services.Helpers;
 using EFSchools.Englishtown.Web;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,6 @@ namespace Dolphin.Services.Course
     {
         private readonly IRepository<CourseUnit> _courseUnitRepository;
         private readonly Translator _translator;
-        private const string ImageNotFound = @"\Juno\NotFound.jpg";
 
         public CourseContentService(IRepository<CourseUnit> courseUnitRepository, Translator translator)
         {
@@ -20,32 +20,17 @@ namespace Dolphin.Services.Course
 
         public IList<CourseUnit> GetAllUnits()
         {
-            var units = _courseUnitRepository.Table.Where(unit => unit.Name != null && 
-                !string.IsNullOrEmpty(unit.Description) &&
-                !string.IsNullOrEmpty(unit.ImageUrl)).ToList();
+            var units = _courseUnitRepository.Table.Where(unit =>
+                unit.Name != null && unit.Name.StartsWith(ServiceConstant.BlurbPrefix) &&
+                unit.Description != null && unit.Description.StartsWith(ServiceConstant.BlurbPrefix) &&
+                unit.ImageUrl != null && unit.ImageUrl.StartsWith(ServiceConstant.MediaPrefix)
+            ).ToList();
+
             foreach (var unit in units)
             {
-                if (unit.Name.Contains("getTrans::"))
-                {
-                    var blurbId = int.Parse(unit.Name.Substring("getTrans::".Length));
-                    unit.Name = this._translator.GetTrans(blurbId, "en");
-                }
-
-                if (unit.Description != null && unit.Description.Contains("getTrans::"))
-                {
-                    var blurbId = int.Parse(unit.Description.Substring("getTrans::".Length));
-                    unit.Description = this._translator.GetTrans(blurbId, "en");
-                }
-
-                if (unit.ImageUrl != null && unit.ImageUrl.Contains("getMedia::"))
-                {
-                    var mediaId = int.Parse(unit.ImageUrl.Substring("getMedia::".Length));
-                    unit.ImageUrl = this._translator.GetMedia(mediaId, "en");
-                }
-                else
-                {
-                    unit.ImageUrl = ImageNotFound;
-                }
+                unit.Name = ResourceHelper.GetTrans(_translator, unit.Name);
+                unit.Description = ResourceHelper.GetTrans(_translator, unit.Description);
+                unit.ImageUrl = ResourceHelper.GetMedia(_translator, unit.ImageUrl);
             }
 
             return units;
