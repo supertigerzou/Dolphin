@@ -1,5 +1,4 @@
-﻿using System.Web.Optimization;
-using Dolphin.Services.Course;
+﻿using Dolphin.Services.Course;
 using Dolphin.Services.Search;
 using Dolphin.Web.WebAPI.App_Start;
 using EF.Web.Unity;
@@ -33,7 +32,6 @@ namespace Dolphin.Web.WebAPI
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ViewModelConfig.RegisterMappings();
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Container.Resolve<ISearchService>().AddUpdateIndex(Container.Resolve<ICourseContentService>().GetAllUnits());
         }
