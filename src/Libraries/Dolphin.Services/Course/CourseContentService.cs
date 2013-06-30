@@ -10,11 +10,16 @@ namespace Dolphin.Services.Course
     public class CourseContentService : ICourseContentService
     {
         private readonly IRepository<CourseUnit> _courseUnitRepository;
+        private readonly IRepository<ImageResource> _imageResourceRepository;
         private readonly Translator _translator;
 
-        public CourseContentService(IRepository<CourseUnit> courseUnitRepository, Translator translator)
+        public CourseContentService(
+            IRepository<CourseUnit> courseUnitRepository,
+            IRepository<ImageResource> imageResourceRepository, 
+            Translator translator)
         {
             this._courseUnitRepository = courseUnitRepository;
+            this._imageResourceRepository = imageResourceRepository;
             this._translator = translator;
         }
 
@@ -30,10 +35,17 @@ namespace Dolphin.Services.Course
             {
                 unit.Name = ResourceHelper.GetTrans(_translator, unit.Name);
                 unit.Description = ResourceHelper.GetTrans(_translator, unit.Description);
-                unit.ImageUrl = ResourceHelper.GetMedia(_translator, unit.ImageUrl);
+                unit.ImageUrl = GetMedia(int.Parse(unit.ImageUrl.Substring(ServiceConstant.MediaPrefix.Length)));
             }
 
             return units;
+        }
+
+        public string GetMedia(int mediaId)
+        {
+            var imageResource = _imageResourceRepository.GetByPrimaryKey(mediaId);
+
+            return imageResource.Url;
         }
     }
 }

@@ -1,8 +1,10 @@
 directory.CourseUnitListView = Backbone.View.extend({
 
-    tagName:'ul',
+    tagName: 'div',
+    
+    id: 'searchResults',
 
-    className: 'nav nav-list',
+    className: 'k-widget k-listview k-selectable',
 
     initialize:function (options) {
         var self = this;

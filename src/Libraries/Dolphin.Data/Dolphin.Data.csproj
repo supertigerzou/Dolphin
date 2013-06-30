@@ -55,10 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFrameworkRepository.cs" />
-    <Compile Include="FutureObjectContext.cs" />
+    <Compile Include="DolphinObjectContext.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Mapping\Course\CourseLessonMap.cs" />
     <Compile Include="Mapping\Course\CourseUnitMap.cs" />
+    <Compile Include="Mapping\Course\ImageResourceMap.cs" />
     <Compile Include="Mapping\Person\CountryRegionMap.cs" />
     <Compile Include="Mapping\Sales\TerritoryMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

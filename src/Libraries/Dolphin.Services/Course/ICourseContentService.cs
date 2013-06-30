@@ -6,5 +6,6 @@ namespace Dolphin.Services.Course
     public interface ICourseContentService
     {
         IList<CourseUnit> GetAllUnits();
+        string GetMedia(int mediaId);
     }
 }

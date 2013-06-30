@@ -1,18 +1,18 @@
 directory.CourseView = Backbone.View.extend({
 
     initialize: function () {
-        this.pagingModel = new Backbone.Model({ pageSize: 8, currentPage: 0, totalCount: 0 });
+        this.pagingModel = new Backbone.Model({ pageSize: 10, currentPage: 0, totalCount: 0 });
         this.searchResults = new directory.CourseUnitCollection();
         this.filteredSearchResults = new directory.CourseUnitCollection();
         this.searchresultsView = new directory.CourseUnitListView({
-            model: this.filteredSearchResults, className: 'search-results'
+            model: this.filteredSearchResults
         });
         this.pagingView = new directory.PagingView({ model: this.pagingModel });
     },
     
     render:function () {
         this.$el.html(this.template());
-        $('#searchResults', this.el).append(this.searchresultsView.render().el);
+        $('.result-section', this.el).append(this.searchresultsView.render().el);
         $('.result-section', this.el).append(this.pagingView.render().el);
         return this;
     },

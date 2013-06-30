@@ -47,6 +47,24 @@ namespace Dolphin.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CourseUnitMap());
+            modelBuilder.Configurations.Add(new CourseLessonMap());
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+
+    [DbConfigurationType(typeof(DolphinDbConfiguration))]
+    public class ResourceObjectContext : DbContext, IDbContext
+    {
+        public ResourceObjectContext(string connectionString, bool lazyLoad = true)
+            : base(connectionString)
+        {
+            ((IObjectContextAdapter)this).ObjectContext.ContextOptions.LazyLoadingEnabled = lazyLoad;
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new ImageResourceMap());
 
             base.OnModelCreating(modelBuilder);
         }
