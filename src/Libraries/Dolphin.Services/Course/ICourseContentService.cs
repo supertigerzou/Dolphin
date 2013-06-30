@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using Dolphin.Core.Domain.Course;
+﻿using Dolphin.Core.Domain.Course;
+using System.Collections.Generic;
 
 namespace Dolphin.Services.Course
 {
     public interface ICourseContentService
     {
         IList<CourseUnit> GetAllUnits();
-        string GetMedia(int mediaId);
+        IList<ImageResource> GetAllMedias();
+        ImageResource GetMedia(int mediaId);
     }
 }

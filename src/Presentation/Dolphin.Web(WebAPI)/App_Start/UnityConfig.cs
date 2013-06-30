@@ -1,3 +1,4 @@
+using Dolphin.Core.Caching;
 using Dolphin.Core.Data;
 using Dolphin.Core.Domain.Course;
 using Dolphin.Data;
@@ -20,6 +21,7 @@ namespace Dolphin.Web.WebAPI.App_Start
             container.RegisterInstance(typeof(IRepository<CourseLesson>), courseLessonRepo);
             container.RegisterInstance(typeof(IRepository<ImageResource>), imageResourceRepo);
             container.RegisterType<ISearchService, SearchService>();
+            container.RegisterType<ICacheManager, MemoryCacheManager>();
             container.RegisterType<ICourseContentService, CourseContentService>();
         }
     }
