@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82BE9C61-16DE-4652-8881-3FAB7A3491DE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dolphin.HtmlClient</RootNamespace>
+    <AssemblyName>Dolphin.HtmlClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="css\styles.css" />
+    <Content Include="img\blog.jpg" />
+    <Content Include="img\dolphin.png" />
+    <Content Include="img\github.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\twitter.jpg" />
+    <Content Include="index.html" />
+    <Content Include="js\app.js" />
+    <Content Include="js\app\models\jsonp\employee.js" />
+    <Content Include="js\app\models\json\course.js" />
+    <Content Include="js\app\models\json\employee.js" />
+    <Content Include="js\app\models\memory\employee.js" />
+    <Content Include="js\app\router.js" />
+    <Content Include="js\app\views\contact.js" />
+    <Content Include="js\app\views\course.js" />
+    <Content Include="js\app\views\courseUnitList.js" />
+    <Content Include="js\app\views\courseUnitListItem.js" />
+    <Content Include="js\app\views\Employee.js" />
+    <Content Include="js\app\views\employeeList.js" />
+    <Content Include="js\app\views\employeeListItem.js" />
+    <Content Include="js\app\views\home.js" />
+    <Content Include="js\app\views\paging.js" />
+    <Content Include="js\app\views\shell.js" />
+    <Content Include="js\lib\backbone.js" />
+    <Content Include="js\lib\jquery.js" />
+    <Content Include="js\lib\text.js" />
+    <Content Include="js\lib\underscore.js" />
+    <Content Include="js\require.js" />
+    <Content Include="js\tpl\Contact.html" />
+    <Content Include="js\tpl\CourseUnitListItem.html" />
+    <Content Include="js\tpl\Course.html" />
+    <Content Include="js\tpl\Employee.html" />
+    <Content Include="js\tpl\EmployeeListItem.html" />
+    <Content Include="js\tpl\Home.html" />
+    <Content Include="js\tpl\Paging.html" />
+    <Content Include="js\tpl\Shell.html" />
+    <Content Include="kendo\2013.1.319\Black\editor.png" />
+    <Content Include="kendo\2013.1.319\Black\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Black\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Black\loading.gif" />
+    <Content Include="kendo\2013.1.319\Black\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Black\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Black\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Black\sprite.png" />
+    <Content Include="kendo\2013.1.319\BlueOpal\editor.png" />
+    <Content Include="kendo\2013.1.319\BlueOpal\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\BlueOpal\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\BlueOpal\loading.gif" />
+    <Content Include="kendo\2013.1.319\BlueOpal\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\BlueOpal\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\BlueOpal\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\BlueOpal\sprite.png" />
+    <Content Include="kendo\2013.1.319\Bootstrap\editor.png" />
+    <Content Include="kendo\2013.1.319\Bootstrap\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Bootstrap\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Bootstrap\loading.gif" />
+    <Content Include="kendo\2013.1.319\Bootstrap\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Bootstrap\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Bootstrap\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Bootstrap\sprite.png" />
+    <Content Include="kendo\2013.1.319\Default\editor.png" />
+    <Content Include="kendo\2013.1.319\Default\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Default\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Default\loading.gif" />
+    <Content Include="kendo\2013.1.319\Default\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Default\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Default\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Default\sprite.png" />
+    <Content Include="kendo\2013.1.319\HighContrast\editor.png" />
+    <Content Include="kendo\2013.1.319\HighContrast\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\HighContrast\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\HighContrast\loading.gif" />
+    <Content Include="kendo\2013.1.319\HighContrast\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\HighContrast\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\HighContrast\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\HighContrast\sprite.png" />
+    <Content Include="kendo\2013.1.319\kendo.black.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.blueopal.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.bootstrap.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.common.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.default.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.highcontrast.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.metro.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.metroblack.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.moonlight.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.rtl.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.silver.min.css" />
+    <Content Include="kendo\2013.1.319\kendo.uniform.min.css" />
+    <Content Include="kendo\2013.1.319\MetroBlack\editor.png" />
+    <Content Include="kendo\2013.1.319\MetroBlack\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\MetroBlack\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\MetroBlack\loading.gif" />
+    <Content Include="kendo\2013.1.319\MetroBlack\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\MetroBlack\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\MetroBlack\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\MetroBlack\sprite.png" />
+    <Content Include="kendo\2013.1.319\Metro\editor.png" />
+    <Content Include="kendo\2013.1.319\Metro\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Metro\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Metro\loading.gif" />
+    <Content Include="kendo\2013.1.319\Metro\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Metro\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Metro\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Metro\sprite.png" />
+    <Content Include="kendo\2013.1.319\Moonlight\editor.png" />
+    <Content Include="kendo\2013.1.319\Moonlight\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Moonlight\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Moonlight\loading.gif" />
+    <Content Include="kendo\2013.1.319\Moonlight\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Moonlight\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Moonlight\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Moonlight\sprite.png" />
+    <Content Include="kendo\2013.1.319\Silver\editor.png" />
+    <Content Include="kendo\2013.1.319\Silver\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Silver\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Silver\loading.gif" />
+    <Content Include="kendo\2013.1.319\Silver\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Silver\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Silver\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Silver\sprite.png" />
+    <Content Include="kendo\2013.1.319\textures\brushed-metal.png" />
+    <Content Include="kendo\2013.1.319\textures\dots1.png" />
+    <Content Include="kendo\2013.1.319\textures\dots10.png" />
+    <Content Include="kendo\2013.1.319\textures\dots11.png" />
+    <Content Include="kendo\2013.1.319\textures\dots12.png" />
+    <Content Include="kendo\2013.1.319\textures\dots13.png" />
+    <Content Include="kendo\2013.1.319\textures\dots2.png" />
+    <Content Include="kendo\2013.1.319\textures\dots3.png" />
+    <Content Include="kendo\2013.1.319\textures\dots4.png" />
+    <Content Include="kendo\2013.1.319\textures\dots5.png" />
+    <Content Include="kendo\2013.1.319\textures\dots6.png" />
+    <Content Include="kendo\2013.1.319\textures\dots7.png" />
+    <Content Include="kendo\2013.1.319\textures\dots8.png" />
+    <Content Include="kendo\2013.1.319\textures\dots9.png" />
+    <Content Include="kendo\2013.1.319\textures\glass-lighter.png" />
+    <Content Include="kendo\2013.1.319\textures\glass.png" />
+    <Content Include="kendo\2013.1.319\textures\highlight.png" />
+    <Content Include="kendo\2013.1.319\textures\hsv-gradient.png" />
+    <Content Include="kendo\2013.1.319\textures\hue.png" />
+    <Content Include="kendo\2013.1.319\textures\leather1.png" />
+    <Content Include="kendo\2013.1.319\textures\leather2.png" />
+    <Content Include="kendo\2013.1.319\textures\noise.png" />
+    <Content Include="kendo\2013.1.319\textures\stripe1.png" />
+    <Content Include="kendo\2013.1.319\textures\stripe2.png" />
+    <Content Include="kendo\2013.1.319\textures\stripe3.png" />
+    <Content Include="kendo\2013.1.319\textures\stripe4.png" />
+    <Content Include="kendo\2013.1.319\textures\stripe5.png" />
+    <Content Include="kendo\2013.1.319\textures\stripe6.png" />
+    <Content Include="kendo\2013.1.319\textures\transparency.png" />
+    <Content Include="kendo\2013.1.319\textures\transtexture.png" />
+    <Content Include="kendo\2013.1.319\Uniform\editor.png" />
+    <Content Include="kendo\2013.1.319\Uniform\imagebrowser.png" />
+    <Content Include="kendo\2013.1.319\Uniform\loading-image.gif" />
+    <Content Include="kendo\2013.1.319\Uniform\loading.gif" />
+    <Content Include="kendo\2013.1.319\Uniform\slider-h.gif" />
+    <Content Include="kendo\2013.1.319\Uniform\slider-v.gif" />
+    <Content Include="kendo\2013.1.319\Uniform\sprite%402x.png" />
+    <Content Include="kendo\2013.1.319\Uniform\sprite.png" />
+    <Content Include="pics\Amy_Jones.jpg" />
+    <Content Include="pics\Amy_Jones50.jpg" />
+    <Content Include="pics\Eugene_Lee.jpg" />
+    <Content Include="pics\Eugene_Lee50.jpg" />
+    <Content Include="pics\Gary_Donovan.jpg" />
+    <Content Include="pics\Gary_Donovan50.jpg" />
+    <Content Include="pics\James_King.jpg" />
+    <Content Include="pics\James_King50.jpg" />
+    <Content Include="pics\John_Williams.jpg" />
+    <Content Include="pics\John_Williams50.jpg" />
+    <Content Include="pics\Julie_Taylor.jpg" />
+    <Content Include="pics\Julie_Taylor50.jpg" />
+    <Content Include="pics\Kathleen_Byrne.jpg" />
+    <Content Include="pics\Kathleen_Byrne50.jpg" />
+    <Content Include="pics\Lisa_Wong.jpg" />
+    <Content Include="pics\Lisa_Wong50.jpg" />
+    <Content Include="pics\Paula_Gates.jpg" />
+    <Content Include="pics\Paula_Gates50.jpg" />
+    <Content Include="pics\Paul_Jones.jpg" />
+    <Content Include="pics\Paul_Jones50.jpg" />
+    <Content Include="pics\Ray_Moore.jpg" />
+    <Content Include="pics\Ray_Moore50.jpg" />
+    <Content Include="pics\Steven_Wells.jpg" />
+    <Content Include="pics\Steven_Wells50.jpg" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8978</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Dolphin</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

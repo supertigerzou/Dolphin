@@ -1,0 +1,23 @@
+﻿<a href="#" title="Go to the first page" class="k-link" data-page="1" tabindex="-1">
+    <span class="k-icon k-i-seek-w">Go to the first page</span>
+</a>
+<a href="#" title="Go to the previous page" class="k-link" data-page="2" tabindex="-1">
+    <span class="k-icon k-i-arrow-w">Go to the previous page</span>
+</a>
+<ul class="k-pager-numbers k-reset">
+    <% for (var i = 1; i <= Math.ceil(totalCount/pageSize); i++) { %>
+        <li><a tabindex="-1" class="k-link" data-page="<%= i %>"><%= i %></a></li>
+    <% } %>
+</ul>
+<a href="#" title="Go to the next page" class="k-link k-state-disabled" data-page="3" tabindex="-1">
+    <span class="k-icon k-i-arrow-e">Go to the next page</span>
+</a>
+<a href="#" title="Go to the last page" class="k-link k-state-disabled" data-page="3" tabindex="-1">
+    <span class="k-icon k-i-seek-e">Go to the last page</span>
+</a>
+<% 
+    var currentPageStartingFrom = pageSize * (currentPage - 1) + 1;
+    var currentPageEndingTo = pageSize * currentPage;
+    if(currentPageEndingTo > totalCount) currentPageEndingTo = totalCount;
+%>
+<span class="k-pager-info k-label"><%= currentPageStartingFrom %> - <%= currentPageEndingTo %> of <%= totalCount %> items</span>
