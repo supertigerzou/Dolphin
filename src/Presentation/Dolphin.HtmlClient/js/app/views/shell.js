@@ -27,8 +27,8 @@ define(function (require) {
         },
 
         events: {
-            "keyup .search-query": "search",
-            "keypress .search-query": "onkeypress"
+            "keyup #searchText": "search",
+            "keypress #searchText": "onkeypress"
         },
 
         search: function (event) {

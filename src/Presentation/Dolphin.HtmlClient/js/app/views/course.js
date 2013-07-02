@@ -32,7 +32,10 @@ define(function(require) {
         events: {
             "click #searchUnit": "search",
             "keypress #searchTerm": "onkeypress",
-            "click .k-link": "changePage"
+            "click .k-link": "changePage",
+            "click .ets-ui-acc-btn-close": "closeActivityWindow",
+            "click .ets-ui-lesson-img": "showActivityWindow",
+            "click .courseUnit": "changeUnit"
         },
 
         search: function() {
@@ -69,6 +72,18 @@ define(function(require) {
             this.filteredSearchResults.reset(originalCollection.slice((
                 this.pagingModel.get('currentPage') - 1) * this.pagingModel.get('pageSize'),
                 this.pagingModel.get('currentPage') * this.pagingModel.get('pageSize')));
+        },
+        
+        showActivityWindow: function () {
+            $('#activityWindow').show();
+        },
+        
+        closeActivityWindow: function () {
+            $('#activityWindow').hide();
+        },
+        
+        changeUnit: function () {
+            $('#unitLessons').show();
         }
     });
 });

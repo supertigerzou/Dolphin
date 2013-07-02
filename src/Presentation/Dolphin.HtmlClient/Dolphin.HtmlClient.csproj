@@ -68,9 +68,16 @@
     <Content Include="bootstrap\img\glyphicons-halflings.png" />
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="css\ets-act-main.min.css" />
+    <Content Include="css\ets-ui-main.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="img\blog.jpg" />
+    <Content Include="img\dolphin.ico" />
     <Content Include="img\dolphin.png" />
+    <Content Include="img\ets-component-media-puzzle.png" />
+    <Content Include="img\ets-ui-acc-arrow.png" />
+    <Content Include="img\ets-ui-main.png" />
+    <Content Include="img\ets-ui-pattern-dots.png" />
     <Content Include="img\github.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\twitter.jpg" />
