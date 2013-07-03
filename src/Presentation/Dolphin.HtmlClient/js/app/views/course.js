@@ -75,11 +75,13 @@ define(function(require) {
         },
         
         showActivityWindow: function () {
+            $('.ets-ui-acc-bd').animate({ height: 540 });
             $('#activityWindow').show();
         },
         
         closeActivityWindow: function () {
-            $('#activityWindow').hide();
+            $('.ets-ui-acc-bd').animate({ height: 0 });
+            $('#activityWindow').fadeOut();
         },
         
         changeUnit: function () {

@@ -1,8 +1,11 @@
 ﻿using ServiceStack.DataAnnotations;
+using System.Collections.Generic;
 namespace Dolphin.Core.Domain.Course
 {
     public class CourseUnit
     {
+        private ICollection<CourseLesson> _lessons;
+
         [Alias("CourseUnit_id")]
         public virtual int Id { get; set; }
 
@@ -17,5 +20,11 @@ namespace Dolphin.Core.Domain.Course
 
         [Alias("UnitImageUrl")]
         public virtual string ImageUrl { get; set; }
+
+        public virtual ICollection<CourseLesson> Lessons
+        {
+            get { return _lessons ?? (_lessons = new List<CourseLesson>()); }
+            protected set { _lessons = value; }
+        }
     }
 }

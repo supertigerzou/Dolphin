@@ -44,6 +44,12 @@ namespace Dolphin.Services.Course
                     unit.Name = ResourceHelper.GetTrans(_translator, unit.Name);
                     unit.Description = ResourceHelper.GetTrans(_translator, unit.Description);
                     unit.ImageUrl = GetMedia(int.Parse(unit.ImageUrl.Substring(ServiceConstant.MediaPrefix.Length))).Url;
+                    foreach (var lesson in unit.Lessons)
+                    {
+                        lesson.Name = ResourceHelper.GetTrans(_translator, lesson.Name);
+                        lesson.Description = ResourceHelper.GetTrans(_translator, lesson.Description);
+                        lesson.ImageUrl = ResourceHelper.GetMedia(this, lesson.ImageUrl);
+                    }
                 }
 
                 return units;

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Course\CourseLesson.cs" />
     <Compile Include="Course\CourseUnit.cs" />
     <Compile Include="Person\CountryRegion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

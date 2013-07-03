@@ -24,5 +24,10 @@ namespace Dolphin.Web.WebAPI
         {
             return Mapper.Map<CourseUnit, CourseUnitViewModel>(record);
         }
+
+        public static CourseLessonViewModel ToModel(this CourseLesson record)
+        {
+            return Mapper.Map<CourseLesson, CourseLessonViewModel>(record);
+        }
     }
 }

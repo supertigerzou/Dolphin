@@ -14,6 +14,10 @@ namespace Dolphin.Data.Mapping.Course
             this.Property(cu => cu.Name).HasColumnName("LessonTopic");
             this.Property(cu => cu.Description).HasColumnName("LessonDescr");
             this.Property(cu => cu.ImageUrl).HasColumnName("LessonImageUrl");
+
+            this.HasRequired(l => l.Unit)
+                .WithMany(u => u.Lessons)
+                .HasForeignKey(l => l.CourseUnit_id);
         }
     }
 }
