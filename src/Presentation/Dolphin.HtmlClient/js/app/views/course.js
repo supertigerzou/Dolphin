@@ -6,6 +6,7 @@ define(function(require) {
         _ = require('underscore'),
         Backbone = require('backbone'),
         CourseUnitListView = require('app/views/courseUnitList'),
+        CourseLessonListView = require('app/views/courseLessonList'),
         PagingView = require('app/views/paging'),
         models = require('app/models/course'),
         tpl = require('text!tpl/Course.html'),
@@ -16,10 +17,15 @@ define(function(require) {
             this.pagingModel = new Backbone.Model({ pageSize: 10, currentPage: 0, totalCount: 0 });
             this.searchResults = new models.CourseUnitCollection();
             this.filteredSearchResults = new models.CourseUnitCollection();
+            this.lessonsUnderCurrentUnit = new Backbone.Collection();
+
             this.searchresultsView = new CourseUnitListView({
                 model: this.filteredSearchResults
             });
             this.pagingView = new PagingView({ model: this.pagingModel });
+            this.lessonsView = new CourseLessonListView({
+                model: this.lessonsUnderCurrentUnit
+            });
         },
 
         render: function() {
@@ -84,8 +90,10 @@ define(function(require) {
             $('#activityWindow').fadeOut();
         },
         
-        changeUnit: function () {
-            $('#unitLessons').show();
+        changeUnit: function (event) {
+            var unitId = $(event.currentTarget).data('id');
+            this.lessonsUnderCurrentUnit.reset(
+                new Backbone.Collection(this.searchResults.where({ Id: unitId }).attributes.Lessons));
         }
     });
 });

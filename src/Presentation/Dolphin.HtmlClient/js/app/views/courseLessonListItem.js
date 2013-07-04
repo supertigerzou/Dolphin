@@ -11,10 +11,10 @@
 
     return Backbone.View.extend({
         tagName: "div",
+        className: "ets-ui-lesson-container",
 
-        className: "",
-
-        initialize: function() {
+        initialize: function () {
+            this.$el.data("id", this.model.attributes.Id);
             this.model.on("change", this.render, this);
             this.model.on("destroy", this.close, this);
         },
