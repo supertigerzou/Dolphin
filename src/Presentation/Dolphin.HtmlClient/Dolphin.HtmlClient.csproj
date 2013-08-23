@@ -92,6 +92,7 @@
     <Content Include="js\app\models\memory\employee.js" />
     <Content Include="js\app\router.js" />
     <Content Include="js\app\views\contact.js" />
+    <Content Include="js\app\views\courseLessonList.js" />
     <Content Include="js\app\views\courseLessonListItem.js" />
     <Content Include="js\app\views\course.js" />
     <Content Include="js\app\views\courseUnitList.js" />

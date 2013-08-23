@@ -17,7 +17,7 @@ define(function(require) {
             this.pagingModel = new Backbone.Model({ pageSize: 10, currentPage: 0, totalCount: 0 });
             this.searchResults = new models.CourseUnitCollection();
             this.filteredSearchResults = new models.CourseUnitCollection();
-            this.lessonsUnderCurrentUnit = new Backbone.Collection();
+            this.lessonsUnderCurrentUnit = new models.CourseLessonCollection();
 
             this.searchresultsView = new CourseUnitListView({
                 model: this.filteredSearchResults
@@ -32,6 +32,7 @@ define(function(require) {
             this.$el.html(template());
             $('.result-section', this.el).append(this.searchresultsView.render().el);
             $('.result-section', this.el).append(this.pagingView.render().el);
+            $('#lessonsArea', this.el).append(this.lessonsView.render().el);
             return this;
         },
 
@@ -93,7 +94,7 @@ define(function(require) {
         changeUnit: function (event) {
             var unitId = $(event.currentTarget).data('id');
             this.lessonsUnderCurrentUnit.reset(
-                new Backbone.Collection(this.searchResults.where({ Id: unitId }).attributes.Lessons));
+                new models.CourseLessonCollection(this.searchResults.where({ Id: unitId })[0].attributes.Lessons).models);
         }
     });
 });
