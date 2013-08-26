@@ -10,21 +10,20 @@ define(function(require) {
     return Backbone.View.extend({
         tagName: 'div',
         id: 'unitLessons',
-        className: 'k-widget k-listview k-selectable',
 
         initialize: function(options) {
             var self = this;
             this.$el.css({ width: '800px' });
             this.model.on("reset", this.render, this);
-            this.model.on("add", function(courseUnit) {
-                self.$el.append(new CourseLessonListItemView({ model: courseUnit }).render().el);
+            this.model.on("add", function (courseLesson) {
+                self.$el.append(new CourseLessonListItemView({ model: courseLesson }).render().el);
             });
         },
 
         render: function() {
             this.$el.empty();
-            _.each(this.model.models, function(courseUnit) {
-                this.$el.append(new CourseLessonListItemView({ model: courseUnit }).render().el);
+            _.each(this.model.models, function(courseLesson) {
+                this.$el.append(new CourseLessonListItemView({ model: courseLesson }).render().el);
             }, this);
 
             return this;

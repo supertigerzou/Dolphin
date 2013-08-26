@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using Dolphin.Core.Domain.Course;
+using Dolphin.Services.Course;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
@@ -20,6 +21,13 @@ namespace Dolphin.Services.Search
         public static string LuceneDir =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lucene_index");
         private static FSDirectory _directoryTemp;
+        private ICourseContentService _courseContentService;
+
+        public SearchService(ICourseContentService courseContentService)
+        {
+            this._courseContentService = courseContentService;
+        }
+
         private static FSDirectory Directory
         {
             get
@@ -115,7 +123,7 @@ namespace Dolphin.Services.Search
             }
         }
 
-        private static Query ParseQuery(string searchQuery, QueryParser parser)
+        private Query ParseQuery(string searchQuery, QueryParser parser)
         {
             Query query;
             try
@@ -129,20 +137,15 @@ namespace Dolphin.Services.Search
             return query;
         }
 
-        private static IEnumerable<CourseUnit> MapLuceneToDataList(IEnumerable<ScoreDoc> hits, IndexSearcher searcher)
+        private IEnumerable<CourseUnit> MapLuceneToDataList(IEnumerable<ScoreDoc> hits, IndexSearcher searcher)
         {
             return hits.Select(hit => MapLuceneDocumentToData(searcher.Doc(hit.Doc))).ToList();
         }
 
-        private static CourseUnit MapLuceneDocumentToData(Document doc)
+        private CourseUnit MapLuceneDocumentToData(Document doc)
         {
-            return new CourseUnit
-            {
-                Id = Convert.ToInt32(doc.Get("Id")),
-                Name = doc.Get("Name"),
-                Description = doc.Get("Description"),
-                ImageUrl = doc.Get("ImageUrl")
-            };
+            var unitId = Convert.ToInt32(doc.Get("Id"));
+            return _courseContentService.GetAllUnits().SingleOrDefault(unit => unit.Id == unitId);
         }
     }
 }
