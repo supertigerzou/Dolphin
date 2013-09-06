@@ -40,63 +40,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EF.Frameworks.Common, Version=2.0.4694.25094, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EF.Frameworks.Common.2.0.4694.25094\lib\net40\EF.Frameworks.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Frameworks.Common.Lookups, Version=2.0.4493.25994, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EF.Frameworks.Common.Lookups.2.0.4493.25994\lib\net40\EF.Frameworks.Common.Lookups.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Frameworks.Orpheus, Version=2.0.4694.25487, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EF.Frameworks.Orpheus.2.0.4694.25487\lib\net40\EF.Frameworks.Orpheus.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Frameworks.Orpheus.Web, Version=2.0.4521.17423, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EF.Frameworks.Orpheus.Web.2.0.4521.17423\lib\net40\EF.Frameworks.Orpheus.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Troop, Version=1.0.4811.32453, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EF.Troop.1.0.4811.32453\lib\net40\EF.Troop.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Common, Version=2.1.4553.31153, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EFSchools.Englishtown.Common.2.1.4553.31153\lib\net40\EFSchools.Englishtown.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Unity, Version=2.5.4822.7590, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EFSchools.Englishtown.Unity.2.6.5.1\lib\net40\EFSchools.Englishtown.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Web.Common, Version=2.3.4646.35676, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EFSchools.Englishtown.Web.Common.2.3.4646.35676\lib\net40\EFSchools.Englishtown.Web.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Web.Troop, Version=2.0.4807.26838, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EFSchools.Englishtown.Web.Troop.2.0.4807.26838\lib\net40\EFSchools.Englishtown.Web.Troop.dll</HintPath>
-    </Reference>
-    <Reference Include="Enyim.Caching, Version=2.8.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Enyim.Caching.2.8.0\lib\net40\Enyim.Caching.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text, Version=3.9.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\ServiceStack.Text.3.9.38\lib\net35\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -137,7 +81,6 @@
     <Compile Include="Query\CountryResourceLoader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

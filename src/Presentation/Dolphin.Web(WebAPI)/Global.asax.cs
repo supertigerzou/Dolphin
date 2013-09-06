@@ -1,10 +1,10 @@
 ﻿using Dolphin.Services.Course;
 using Dolphin.Services.Search;
 using Dolphin.Web.WebAPI.App_Start;
-using EF.Web.Unity;
-using Microsoft.Practices.Unity;
 using System.Web.Http;
 using System.Web.Routing;
+using EF.Web.Unity;
+using Microsoft.Practices.Unity;
 
 namespace Dolphin.Web.WebAPI
 {

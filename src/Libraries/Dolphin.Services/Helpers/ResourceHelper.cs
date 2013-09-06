@@ -1,5 +1,4 @@
 ﻿using Dolphin.Services.Course;
-using EFSchools.Englishtown.Web;
 
 namespace Dolphin.Services.Helpers
 {

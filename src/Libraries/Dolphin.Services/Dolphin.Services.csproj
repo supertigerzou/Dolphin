@@ -32,66 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EF.Common">
-      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Configuration">
-      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Configuration.Data">
-      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Configuration.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Data">
-      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Globalization">
-      <HintPath>..\..\packages\EF.Globalization.4.2.114.1\lib\net40\EF.Globalization.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Globalization.Data">
-      <HintPath>..\..\packages\EF.Globalization.4.2.114.1\lib\net40\EF.Globalization.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Lookups">
-      <HintPath>..\..\packages\EF.Core.4.2.114.1\lib\net40\EF.Lookups.dll</HintPath>
-    </Reference>
-    <Reference Include="EF.Web">
-      <HintPath>..\..\packages\EF.Web.4.2.114.1\lib\net40\EF.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown">
-      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Data">
-      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Globalization">
-      <HintPath>..\..\packages\EFSchools.Englishtown.Web.4.1.60.1\lib\net40\EFSchools.Englishtown.Globalization.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Globalization.Data">
-      <HintPath>..\..\packages\EFSchools.Englishtown.Web.4.1.60.1\lib\net40\EFSchools.Englishtown.Globalization.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Memcached.Enyim">
-      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.Memcached.Enyim.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.ServiceModel">
-      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.ServiceModel.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.ServiceModel.Data">
-      <HintPath>..\..\packages\EFSchools.Englishtown.4.1.60.1\lib\net40\EFSchools.Englishtown.ServiceModel.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EFSchools.Englishtown.Web">
-      <HintPath>..\..\packages\EFSchools.Englishtown.Web.4.1.60.1\lib\net40\EFSchools.Englishtown.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Enyim.Caching, Version=2.12.0.0, Culture=neutral, PublicKeyToken=cec98615db04012e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EnyimMemcached.2.12\lib\net35\Enyim.Caching.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="slf4net">
-      <HintPath>..\..\packages\slf4net.0.1.32.1\lib\net35\slf4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

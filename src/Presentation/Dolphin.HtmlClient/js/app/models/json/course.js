@@ -13,7 +13,7 @@
         
         CourseUnitCollection = Backbone.Collection.extend({
             model: CourseUnit,
-            url: "http://localhost/Dolphin.Web.WebAPI/Api/Course/Search"
+            url: "http://dolphin.azurewebsites.net/Api/Course/Search"
         }),
         
         CourseLesson = Backbone.Model.extend({
@@ -25,7 +25,7 @@
 
         CourseLessonCollection = Backbone.Collection.extend({
             model: CourseLesson,
-            url: "http://localhost/Dolphin.Web.WebAPI/Api/Course/Search"
+            url: "http://dolphin.azurewebsites.net/Api/Course/Search"
         });
 
     return {

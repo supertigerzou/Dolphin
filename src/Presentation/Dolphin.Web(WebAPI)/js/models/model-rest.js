@@ -7,5 +7,5 @@ directory.CourseUnit = Backbone.Model.extend({
 
 directory.CourseUnitCollection = Backbone.Collection.extend({
     model: directory.CourseUnit,
-    url: "http://localhost/Dolphin.Web.WebAPI/Api/Course/Search"
+    url: "http://dolphin.azurewebsites.net/Api/Course/Search"
 });
