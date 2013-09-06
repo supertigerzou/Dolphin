@@ -65,6 +65,7 @@ namespace Dolphin.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ImageResourceMap());
+            modelBuilder.Configurations.Add(new TextResourceMap());
 
             base.OnModelCreating(modelBuilder);
         }

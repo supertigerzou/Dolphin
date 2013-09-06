@@ -57,6 +57,7 @@
     <Compile Include="EntityFrameworkRepository.cs" />
     <Compile Include="DolphinObjectContext.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="Mapping\Course\TextResourceMap.cs" />
     <Compile Include="Mapping\Course\CourseLessonMap.cs" />
     <Compile Include="Mapping\Course\CourseUnitMap.cs" />
     <Compile Include="Mapping\Course\ImageResourceMap.cs" />

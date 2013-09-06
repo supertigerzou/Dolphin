@@ -390,6 +390,7 @@
     <Content Include="Content\font\fontawesome-webfont.ttf" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <Content Include="Content\font\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\dolphin.pubxml" />
     <None Include="Scripts\amplify-vsdoc.js" />
     <Content Include="pics\Amy_Jones.jpg" />
     <Content Include="pics\Amy_Jones50.jpg" />
@@ -856,7 +857,9 @@
     <Content Include="tpl\HomeView.html" />
     <Content Include="tpl\PagingView.html" />
     <Content Include="tpl\ShellView.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

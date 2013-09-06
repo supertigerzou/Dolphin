@@ -7,6 +7,7 @@ namespace Dolphin.Services.Course
     {
         IList<CourseUnit> GetAllUnits();
         IList<ImageResource> GetAllMedias();
+        TextResource GetText(int textId);
         ImageResource GetMedia(int mediaId);
     }
 }

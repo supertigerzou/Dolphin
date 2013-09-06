@@ -2,7 +2,6 @@ using Dolphin.Core.Caching;
 using Dolphin.Core.Data;
 using Dolphin.Core.Domain.Course;
 using Dolphin.Services.Helpers;
-using EFSchools.Englishtown.Web;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,18 +11,18 @@ namespace Dolphin.Services.Course
     {
         private readonly IRepository<CourseUnit> _courseUnitRepository;
         private readonly IRepository<ImageResource> _imageResourceRepository;
-        private readonly Translator _translator;
+        private readonly IRepository<TextResource> _textResourceRepository;
         private readonly ICacheManager _cacheManager;
 
         public CourseContentService(
             IRepository<CourseUnit> courseUnitRepository,
             IRepository<ImageResource> imageResourceRepository,
-            Translator translator,
+            IRepository<TextResource> textResourceRepository,
             ICacheManager cacheManager)
         {
             this._courseUnitRepository = courseUnitRepository;
             this._imageResourceRepository = imageResourceRepository;
-            this._translator = translator;
+            this._textResourceRepository = textResourceRepository;
             this._cacheManager = cacheManager;
         }
 
@@ -41,13 +40,13 @@ namespace Dolphin.Services.Course
 
                 foreach (var unit in units)
                 {
-                    unit.Name = ResourceHelper.GetTrans(_translator, unit.Name);
-                    unit.Description = ResourceHelper.GetTrans(_translator, unit.Description);
+                    unit.Name = ResourceHelper.GetTrans(this, unit.Name);
+                    unit.Description = ResourceHelper.GetTrans(this, unit.Description);
                     unit.ImageUrl = GetMedia(int.Parse(unit.ImageUrl.Substring(ServiceConstant.MediaPrefix.Length))).Url;
                     foreach (var lesson in unit.Lessons)
                     {
-                        lesson.Name = ResourceHelper.GetTrans(_translator, lesson.Name);
-                        lesson.Description = ResourceHelper.GetTrans(_translator, lesson.Description);
+                        lesson.Name = ResourceHelper.GetTrans(this, lesson.Name);
+                        lesson.Description = ResourceHelper.GetTrans(this, lesson.Description);
                         lesson.ImageUrl = ResourceHelper.GetMedia(this, lesson.ImageUrl);
                     }
                 }
@@ -56,10 +55,21 @@ namespace Dolphin.Services.Course
             });
         }
 
+        public IList<TextResource> GetAllTexts()
+        {
+            const string key = "Dolphin.text.all";
+            return this._cacheManager.Get(key, () => this._textResourceRepository.Table.ToList());
+        }
+
         public IList<ImageResource> GetAllMedias()
         {
             const string key = "Dolphin.media.all";
             return this._cacheManager.Get(key, () => this._imageResourceRepository.Table.ToList());
+        }
+
+        public TextResource GetText(int textId)
+        {
+            return GetAllTexts().SingleOrDefault(textResource => textResource.Id == textId);
         }
 
         public ImageResource GetMedia(int mediaId)

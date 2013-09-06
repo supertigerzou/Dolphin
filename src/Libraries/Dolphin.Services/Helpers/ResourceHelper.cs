@@ -5,12 +5,12 @@ namespace Dolphin.Services.Helpers
 {
     public static class ResourceHelper
     {
-        public static string GetTrans(Translator translator, string value)
+        public static string GetTrans(ICourseContentService courseContentService, string value)
         {
             if (value.StartsWith(ServiceConstant.BlurbPrefix))
             {
                 var blurbId = int.Parse(value.Substring(ServiceConstant.BlurbPrefix.Length));
-                return translator.GetTrans(blurbId, "en");
+                return courseContentService.GetText(blurbId).Text;
             }
             return value;
         }
