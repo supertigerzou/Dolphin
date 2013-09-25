@@ -28,6 +28,7 @@ define(function (require) {
             "": "home",
             "contact": "contact",
             "course": "course",
+            "weibo": "weibo",
             "employees/:id": "employeeDetails"
         },
 
@@ -50,6 +51,14 @@ define(function (require) {
                 var view = new CourseView({ el: $content });
                 view.render();
                 shellView.selectMenuItem('course-menu');
+            });
+        },
+        
+        weibo: function () {
+            require(["app/views/weibo"], function (WeiboView) {
+                var view = new WeiboView({ el: $content });
+                view.render();
+                shellView.selectMenuItem('weibo-menu');
             });
         },
 

@@ -30,7 +30,7 @@ namespace Dolphin.Web.WebAPI
 
             UnityConfig.RegisterTypes(Container);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
             ViewModelConfig.RegisterMappings();
 
             Container.Resolve<ISearchService>().AddUpdateIndex(Container.Resolve<ICourseContentService>().GetAllUnits());
