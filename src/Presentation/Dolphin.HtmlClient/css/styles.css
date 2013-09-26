@@ -85,3 +85,71 @@ body {
     min-width: 260px;
     min-height: 50px;
 }
+
+.demo-section {
+            width: 1000px;
+            padding: 30px;
+        }
+        .demo-section h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .twit-reader
+        {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            border: 1px solid rgba(0,0,0,0.1);
+            height: 700px;
+            overflow: auto;
+            -webkit-transform: translatez(0);
+            position:relative; /*IE7*/
+        }
+        .k-listview
+        {
+            padding: 0;
+            border: 0;
+        }
+        .twit
+        {
+            width: 970px;
+            height: 54px;
+            margin: 0;
+            padding: 10px;
+            border-top: 1px solid rgba(255,255,255,1);
+            border-right: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            border-left: 1px solid rgba(255,255,255,0.1);
+
+            background: -moz-linear-gradient(top,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.10) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.10)));
+            background: -webkit-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.10) 100%);
+            background: -o-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.10) 100%);
+            background: -ms-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.10) 100%);
+            background: linear-gradient(to bottom,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.10) 100%);
+        }
+        .twit img
+        {
+            border: 3px solid transparent;
+            float: left;
+        }
+        .twit a:hover img
+        {
+            border: 3px solid #00acec;
+        }
+        .twit p
+        {
+            float: left;
+            margin: 0;
+            padding: 0 0 0 10px;
+            width: 900px;
+        }
+        .twit:after
+        {
+            scontent: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }

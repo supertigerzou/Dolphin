@@ -10,7 +10,8 @@ require.config({
     map: {
         '*': {
             'app/models/employee': 'app/models/memory/employee',
-            'app/models/course': 'app/models/json/course'
+            'app/models/course': 'app/models/json/course',
+            'app/models/weibo': 'app/models/json/weibo'
         }
     },
 

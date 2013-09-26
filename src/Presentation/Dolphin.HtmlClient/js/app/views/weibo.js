@@ -6,6 +6,7 @@ define(function (require) {
         _           = require('underscore'),
         Backbone = require('backbone'),
         WeiboListView = require('app/views/weiboList'),
+        models = require('app/models/weibo'),
         tpl         = require('text!tpl/Weibo.html'),
         template = _.template(tpl);
 
@@ -20,6 +21,7 @@ define(function (require) {
 
         render: function () {
             this.$el.html(template());
+            $('.twit-reader', this.el).append(this.weiboPostsView.render().el);
 
             WB2.anyWhere(function (W) {
                 W.widget.connectButton({
@@ -36,7 +38,25 @@ define(function (require) {
             });
             
             return this;
-        }
+        },
+        
+        events: {
+            "click #loadPosts": "load"
+        },
+        
+        load: function () {
+            WB2.anyWhere($.proxy(function (W) {
+                W.parseCMD("/statuses/user_timeline.json", $.proxy(function (sResult, bStatus) {
+                    if (bStatus == true) {
+                        this.weiboPosts.set(sResult.statuses);
+                    }
+                }, this), {
+                    userid: 1418197612
+                }, {
+                    method: 'get'
+                });
+            }, this));
+        },
 
     });
 

@@ -12,7 +12,7 @@
     return Backbone.View.extend({
         tagName: "div",
 
-        className: "weiboPost",
+        className: "twit",
 
         initialize: function () {
             this.$el.data({ id: this.model.attributes.Id });
