@@ -75,11 +75,14 @@
     <Content Include="index.html" />
     <Content Include="js\app.js" />
     <Content Include="js\app\models\jsonp\employee.js" />
+    <Content Include="js\app\models\json\weibo.js" />
     <Content Include="js\app\models\json\course.js" />
     <Content Include="js\app\models\json\employee.js" />
     <Content Include="js\app\models\memory\employee.js" />
     <Content Include="js\app\router.js" />
     <Content Include="js\app\views\contact.js" />
+    <Content Include="js\app\views\weiboList.js" />
+    <Content Include="js\app\views\weiboListItem.js" />
     <Content Include="js\app\views\weibo.js" />
     <Content Include="js\app\views\courseLessonList.js" />
     <Content Include="js\app\views\courseLessonListItem.js" />
@@ -98,6 +101,7 @@
     <Content Include="js\lib\underscore.js" />
     <Content Include="js\require.js" />
     <Content Include="js\tpl\Contact.html" />
+    <Content Include="js\tpl\WeiboListItem.html" />
     <Content Include="js\tpl\Weibo.html" />
     <Content Include="js\tpl\CourseLessonListItem.html" />
     <Content Include="js\tpl\CourseUnitListItem.html" />

@@ -4,12 +4,19 @@ define(function (require) {
 
     var $           = require('jquery'),
         _           = require('underscore'),
-        Backbone    = require('backbone'),
+        Backbone = require('backbone'),
+        WeiboListView = require('app/views/weiboList'),
         tpl         = require('text!tpl/Weibo.html'),
-
         template = _.template(tpl);
 
     return Backbone.View.extend({
+        initialize: function () {
+            this.weiboPosts = new models.WeiboPostCollection();
+
+            this.weiboPostsView = new WeiboListView({
+                model: this.weiboPosts
+            });
+        },
 
         render: function () {
             this.$el.html(template());
